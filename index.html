@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Radar en Salud Pública</title>
+<meta name="description" content="Actualización semanal de evidencia en salud pública, epidemiología y metodología de la investigación, dirigida a la comunidad universitaria y al público general.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://radarsaludpublica.cl/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Radar en Salud Pública">
+<meta property="og:title" content="Radar en Salud Pública">
+<meta property="og:description" content="Actualización semanal de evidencia en salud pública, epidemiología y metodología de la investigación, dirigida a la comunidad universitaria y al público general.">
+<meta property="og:url" content="https://radarsaludpublica.cl/">
+<meta property="og:locale" content="es_CL">
+<meta name="twitter:card" content="summary">
+<style>
+  html{scroll-padding-top:1rem}
+  body{margin:0;padding:0}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    color-scheme:dark;
+    --paper:#0d1618;
+    --surface:#152124;
+    --ink:#e4ecec;
+    --muted:#93a7ac;
+    --rule:#26363a;
+    --rule-soft:#1c2a2d;
+    --accent:#5cbfb6;
+    --t-onco:#d98ba3;
+    --t-sist:#7db4dd;
+    --t-epi:#79bf97;
+    --t-met:#d3a45f;
+    --shadow:0 1px 2px rgba(0,0,0,.3);
+
+    --max:70ch;
+    --step--1:.8125rem;
+    --step-0:1rem;
+    --step-1:1.1875rem;
+    --step-2:1.5rem;
+    --step-3:2rem;
+    --step-4:2.75rem;
+  }
+
+  *{box-sizing:border-box}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:var(--step-0);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-wrap:break-word;
+  }
+  h1,h2,h3,.q,.meta{overflow-wrap:break-word}
+  img,table{max-width:100%}
+  .wrap{max-width:calc(var(--max) + 8rem);margin:0 auto;padding:3.5rem 1.5rem 5rem}
+  a{color:inherit}
+  h1,h2,h3{font-family:Spectral,Georgia,serif;text-wrap:balance;margin:0;font-weight:600;line-height:1.2}
+
+  /* ---------- cabecera ---------- */
+  .masthead{border-bottom:1px solid var(--ink);padding-bottom:1.25rem}
+  .kicker{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:var(--step--1);letter-spacing:.14em;text-transform:uppercase;
+    color:var(--accent);margin:0 0 .75rem
+  }
+  h1{font-size:var(--step-4);letter-spacing:-.015em}
+  .edicion{
+    display:flex;flex-wrap:wrap;gap:.5rem 1.25rem;align-items:baseline;
+    margin-top:.85rem;font-family:"IBM Plex Mono",monospace;
+    font-size:var(--step--1);color:var(--muted)
+  }
+  .standfirst{
+    font-family:Spectral,Georgia,serif;font-size:var(--step-1);
+    max-width:var(--max);margin:1.75rem 0 0;color:var(--ink)
+  }
+
+  /* ---------- panel de búsqueda ---------- */
+  .busqueda{
+    margin:2.5rem 0 0;padding:1.25rem 1.4rem;
+    background:var(--surface);border:1px solid var(--rule-soft);
+  }
+  .busqueda h2{
+    font-family:"IBM Plex Mono",monospace;font-weight:500;
+    font-size:var(--step--1);letter-spacing:.12em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:1rem
+  }
+  .consultas{list-style:none;margin:0;padding:0;display:grid;gap:.7rem}
+  .consultas li{
+    display:grid;grid-template-columns:1fr auto;gap:.35rem 1rem;align-items:baseline;
+    padding-bottom:.7rem;border-bottom:1px solid var(--rule-soft)
+  }
+  .consultas li:last-child{border-bottom:0;padding-bottom:0}
+  .q{font-family:"IBM Plex Mono",monospace;font-size:var(--step--1)}
+  .n{
+    font-family:"IBM Plex Mono",monospace;font-size:var(--step--1);
+    color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap
+  }
+  .totales{
+    margin:1.1rem 0 0;padding-top:.9rem;border-top:1px solid var(--rule);
+    font-size:var(--step--1);color:var(--muted)
+  }
+  .totales strong{color:var(--ink);font-variant-numeric:tabular-nums}
+
+  /* ---------- secciones ---------- */
+  .tema{margin-top:3.5rem}
+  .tema-cab{
+    display:flex;align-items:baseline;gap:.9rem;
+    padding-bottom:.6rem;border-bottom:2px solid var(--hue)
+  }
+  .tema-cab h2{font-size:var(--step-2);color:var(--hue)}
+  .tema-cab .cuenta{
+    margin-left:auto;font-family:"IBM Plex Mono",monospace;
+    font-size:var(--step--1);color:var(--muted);font-variant-numeric:tabular-nums
+  }
+  .tema[data-hue="onco"]{--hue:var(--t-onco)}
+  .tema[data-hue="sist"]{--hue:var(--t-sist)}
+  .tema[data-hue="epi"]{--hue:var(--t-epi)}
+  .tema[data-hue="met"]{--hue:var(--t-met)}
+
+  .fichas{display:grid;gap:0;margin-top:.5rem}
+  .ficha{
+    padding:1.5rem 0;border-bottom:1px solid var(--rule-soft);
+    max-width:var(--max)
+  }
+  .ficha:last-child{border-bottom:0}
+  .meta{
+    font-family:"IBM Plex Mono",monospace;font-size:var(--step--1);
+    color:var(--muted);display:flex;flex-wrap:wrap;gap:.3rem .6rem;margin-bottom:.4rem
+  }
+  .meta .revista{color:var(--hue);font-weight:500}
+  .meta .sep{opacity:.45}
+  .ficha h3{font-size:var(--step-1);line-height:1.3}
+  .ficha h3 a{text-decoration:none;background-image:linear-gradient(var(--rule),var(--rule));background-size:100% 1px;background-position:0 100%;background-repeat:no-repeat;padding-bottom:.08em}
+  .ficha h3 a:hover{background-image:linear-gradient(var(--hue),var(--hue))}
+  .ficha p{margin:.55rem 0 0;color:var(--ink)}
+  .porque{
+    margin-top:.6rem;padding-left:.85rem;border-left:2px solid var(--hue);
+    font-size:var(--step--1);color:var(--muted)
+  }
+  .porque b{
+    font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:.9em;
+    letter-spacing:.06em;text-transform:uppercase;color:var(--hue);
+    display:block;margin-bottom:.15rem
+  }
+
+  /* ---------- metodología ---------- */
+  .metodo{
+    margin-top:4.5rem;padding-top:2rem;border-top:1px solid var(--ink);
+    max-width:var(--max)
+  }
+  .metodo h2{font-size:var(--step-2);margin-bottom:1rem}
+  .metodo h3{
+    font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:var(--step--1);
+    letter-spacing:.12em;text-transform:uppercase;color:var(--accent);
+    margin:1.9rem 0 .5rem
+  }
+  .metodo p{margin:.6rem 0;color:var(--muted)}
+  .metodo ul{margin:.6rem 0;padding-left:1.1rem;color:var(--muted)}
+  .metodo li{margin:.35rem 0}
+  .metodo strong{color:var(--ink);font-weight:600}
+  .pendiente{
+    margin-top:1.5rem;padding:1rem 1.2rem;background:var(--surface);
+    border-left:2px solid var(--accent);font-size:var(--step--1);color:var(--muted)
+  }
+  .pendiente b{color:var(--ink)}
+
+  .pie{
+    margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--rule);
+    font-family:"IBM Plex Mono",monospace;font-size:var(--step--1);color:var(--muted)
+  }
+
+  a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+  @media (max-width:640px){
+    :root{--step-4:2.05rem;--step-3:1.7rem;--step-2:1.3rem;--step-1:1.125rem}
+    .wrap,.shell{padding:2.25rem 1rem 3.25rem}
+    .consultas li{grid-template-columns:1fr}
+    .busqueda{padding:1rem 1.1rem}
+    .tema{margin-top:2.5rem}
+    .ficha{padding:1.25rem 0}
+    .metodo{margin-top:3.25rem}
+    .tema-cab{flex-wrap:wrap;gap:.35rem .7rem}
+    .tema-cab .cuenta{margin-left:0;width:100%}
+  }
+  @media (max-width:420px){
+    :root{--step-4:1.8rem}
+    .wrap,.shell{padding:2rem .9rem 3rem}
+  }
+
+  .aviso{
+    margin:1.6rem 0 0;padding:.9rem 1.15rem;
+    background:var(--surface);border-left:2px solid var(--accent);
+    font-size:var(--step--1);line-height:1.55;color:var(--muted);
+    max-width:var(--max)
+  }
+
+
+  /* ---------- navegacion ---------- */
+  .shell{max-width:calc(var(--max) + 22rem);margin:0 auto;padding:3.5rem 1.5rem 5rem}
+  .nav{margin:0 0 2.75rem;padding:0 0 1.35rem;border-bottom:1px solid var(--rule)}
+  .nav h2{
+    font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:var(--step--1);
+    letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 .7rem
+  }
+  .nav ul{list-style:none;margin:0;padding:0}
+  .nav-sec{display:flex;flex-wrap:wrap;gap:.4rem 1.1rem}
+  .nav-sec a{
+    font-size:var(--step--1);color:var(--muted);text-decoration:none;
+    border-bottom:1px solid transparent;padding-bottom:.1rem
+  }
+  .nav-sec a:hover{color:var(--ink);border-bottom-color:var(--accent)}
+  .archivo{margin-top:1.35rem}
+  .archivo summary{
+    font-family:"IBM Plex Mono",monospace;font-size:var(--step--1);
+    color:var(--accent);cursor:pointer
+  }
+  .archivo summary:hover{text-decoration:underline}
+  .archivo ul{margin:.75rem 0 0;display:grid;gap:.5rem}
+  .archivo a{font-size:var(--step--1);color:var(--muted);text-decoration:none;display:block}
+  .archivo a:hover{color:var(--ink)}
+  .archivo .fecha{opacity:.65}
+  .archivo .actual{color:var(--accent)}
+  .tema,.metodo{scroll-margin-top:2rem}
+
+  @media (min-width:1080px){
+    .shell{display:grid;grid-template-columns:12rem minmax(0,1fr);gap:4.5rem;align-items:start}
+    .nav{position:sticky;top:2.5rem;margin:0;padding:0;border-bottom:0}
+    .nav-sec{flex-direction:column;gap:.55rem}
+    .contenido{min-width:0}
+  }
+
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="shell">
+
+  <nav class="nav" aria-label="Navegación del boletín">
+    <h2>En esta edición</h2>
+    <ul class="nav-sec">
+      <li><a href="#sec-onco">Cáncer y políticas</a></li>
+      <li><a href="#sec-sist">Sistemas y servicios</a></li>
+      <li><a href="#sec-epi">Epidemiología</a></li>
+      <li><a href="#sec-met">Métodos y datos</a></li>
+      <li><a href="#sec-metodo">Cómo se arma</a></li>
+    </ul>
+    <details class="archivo">
+      <summary>Ediciones anteriores</summary>
+      <ul>
+        <li><a class="actual" href="ediciones/03.html">Edición 03 <span class="fecha">· 21–27 sep 2026 · esta edición</span></a></li>
+        <li><a href="ediciones/02.html">Edición 02 <span class="fecha">· 14–20 sep 2026</span></a></li>
+      </ul>
+    </details>
+  </nav>
+
+  <div class="contenido">
+
+
+  <header class="masthead">
+    <p class="kicker">Boletín semanal · Salud pública</p>
+    <h1>Radar en Salud Pública</h1>
+    <div class="edicion">
+      <span>Edición 03</span>
+      <span>21 – 27 de septiembre de 2026</span>
+      <span>16 artículos de 169 revisados</span>
+    </div>
+  </header>
+
+  <p class="standfirst">
+    Lo publicado esta semana en cáncer y políticas, sistemas y servicios, epidemiología y vigilancia,
+    y métodos cuantitativos. Cada ficha indica revista, fecha y enlace al registro original.
+  </p>
+
+  <p class="aviso">
+    Página generada con inteligencia artificial y actualizada de forma automática cada lunes,
+    según criterios preestablecidos. Las fichas se redactan a partir de la información que entrega
+    PubMed, no del texto completo de los artículos. Revisa siempre la fuente original antes de citar.
+  </p>
+
+  <section class="busqueda">
+    <h2>Consultas ejecutadas en PubMed</h2>
+    <ul class="consultas">
+      <li>
+        <span class="q">cancer screening inequality</span>
+        <span class="n">2 registros</span>
+      </li>
+      <li>
+        <span class="q">health system access equity</span>
+        <span class="n">42 registros</span>
+      </li>
+      <li>
+        <span class="q">epidemiology surveillance population trends</span>
+        <span class="n">48 registros</span>
+      </li>
+      <li>
+        <span class="q">machine learning public health data</span>
+        <span class="n">77 registros</span>
+      </li>
+      <li>
+        <span class="q">latin america health inequality</span>
+        <span class="n">sin acceso</span>
+      </li>
+    </ul>
+    <p class="totales">
+      Las cuatro primeras consultas usan filtro de fecha de publicación
+      <strong>2026/09/21 – 2026/09/27</strong> (siete días). La quinta, dedicada a la producción
+      latinoamericana, usa una ventana de catorce días,
+      <strong>2026/09/14 – 2026/09/27</strong>, porque esa literatura entra a PubMed con retraso.
+      Orden por fecha descendente en todas. Se revisaron hasta los <strong>20</strong> registros más
+      recientes de cada consulta y se seleccionaron <strong>16</strong>.
+    </p>
+  </section>
+
+  <!-- ============ CÁNCER Y POLÍTICAS ============ -->
+  <section class="tema" id="sec-onco" data-hue="onco">
+    <div class="tema-cab">
+      <h2>Cáncer y políticas de salud</h2>
+      <span class="cuenta">4 artículos</span>
+    </div>
+    <div class="fichas">
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">The Lancet Oncology</span><span class="sep">·</span><span>25 sep 2026</span><span class="sep">·</span><span>Casolino R et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42790448/">Accelerating equitable cancer genomics and precision oncology in health care and research: a Lancet Oncology Commission</a></h3>
+        <p>Comisión de <em>Lancet Oncology</em> sobre cómo incorporar la genómica del cáncer y la oncología de precisión en los sistemas de salud. El punto de partida de los autores es que muchos sistemas tienen dificultades para implementarlas de forma equitativa y sostenible.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Es el documento de referencia de la semana para encuadrar una propuesta de política oncológica: te da el lenguaje con que hoy se discute equidad e implementación en cáncer, y sirve tanto para la introducción del FEI como para clase.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">Critical Reviews in Oncology/Hematology</span><span class="sep">·</span><span>22 sep 2026</span><span class="sep">·</span><span>Turan G et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42772653/">Overcoming Inequity in Cancer Screening: Can Modern Technologies Close the Gap?</a></h3>
+        <p>Revisión que parte de una constatación conocida: los programas de tamizaje han reducido la mortalidad por cáncer en países de ingreso alto, pero el beneficio se reparte de forma desigual. Examina cuatro tecnologías emergentes, entre ellas los puntajes de riesgo poligénico y la imagenología asistida por inteligencia artificial.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Plantea la pregunta correcta antes de entusiasmarse con la tecnología: si el problema es de acceso, una herramienta mejor puede ampliar la brecha en lugar de cerrarla. Buen contrapunto para discutir priorización en el GES.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">Annals of Surgical Oncology</span><span class="sep">·</span><span>23 sep 2026</span><span class="sep">·</span><span>de Bruijn A et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42778837/">A Decade of Change: Systemic Treatment Patterns in Clinically Small HER2-Positive Node-Negative Breast Cancer in the Netherlands: A Population-Based Study</a></h3>
+        <p>Estudio poblacional sobre pacientes con cáncer de mama HER2 positivo cT1N0 diagnosticadas en los Países Bajos entre 2012 y 2022. Describe cómo cambiaron los patrones de tratamiento sistémico a lo largo de la década.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Un registro poblacional usado para seguir la difusión de una práctica clínica en el tiempo. Es el mismo tipo de serie que necesitarás construir para mostrar qué cambia —y qué no— cuando se modifica una regla de la garantía.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">British Journal of Haematology</span><span class="sep">·</span><span>24 sep 2026</span><span class="sep">·</span><span>Christensen ME et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42786643/">Development and validation of a model for stratifying haematological malignancy risk in primary care</a></h3>
+        <p>Desarrollo y validación de una herramienta para estimar el riesgo global de neoplasia hematológica en pacientes de atención primaria, construida con variables de entrada simples.</p>
+        <p class="porque"><b>Por qué mirarlo</b>El cuello de botella del GES oncológico está antes de la confirmación: en quién se sospecha y se deriva. Un modelo de estratificación con datos de rutina en el nivel primario es una vía concreta para intervenir ahí.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ SISTEMAS Y SERVICIOS ============ -->
+  <section class="tema" id="sec-sist" data-hue="sist">
+    <div class="tema-cab">
+      <h2>Sistemas y servicios de salud</h2>
+      <span class="cuenta">4 artículos</span>
+    </div>
+    <div class="fichas">
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">International Journal for Equity in Health</span><span class="sep">·</span><span>21 sep 2026</span><span class="sep">·</span><span>Zhu X et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42778919/">More work means less pay: a qualitative understanding of physicians' patient selection decision-making under DRG reform in Nanjing, China</a></h3>
+        <p>Estudio cualitativo sobre cómo los médicos deciden a qué pacientes aceptar bajo un sistema de pago por grupos relacionados de diagnóstico. Los autores sitúan el trabajo en el avance de la reforma de pago en China junto a compromisos declarados de equidad.</p>
+        <p class="porque"><b>Por qué mirarlo</b>El más pertinente de la semana para tu propuesta: muestra que una regla de pago o de derivación no solo cambia flujos, también cambia a quién el prestador quiere atender. Es la respuesta conductual que tu evaluación de la derivación automática debe anticipar y, si puedes, medir.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">Climacteric</span><span class="sep">·</span><span>25 sep 2026</span><span class="sep">·</span><span>Veiga Junior NN et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42788813/">Menopause care in Brazil: policy recognition and the challenge of implementation</a></h3>
+        <p>Analiza la distancia entre el reconocimiento normativo de la atención de la menopausia y su incorporación efectiva. Los autores señalan que Brasil cuenta con un sistema público universal y que, aun así, esta atención se integra de forma inconsistente.</p>
+        <p class="porque"><b>Por qué mirarlo</b>La brecha entre la norma escrita y la prestación real es el problema central del GES. Aquí está descrita en el SUS, el sistema latinoamericano con el que Chile más se compara.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">Healthcare (Basel)</span><span class="sep">·</span><span>21 sep 2026</span><span class="sep">·</span><span>Triantafyllou C et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42793654/">Preventive Care for Non-Communicable Diseases in Greece: A Situational Analysis of Disease Burden, Service Delivery, Financing, Screening and Quality Governance</a></h3>
+        <p>Análisis de situación que sintetiza la evidencia disponible hasta el 10 de agosto de 2026 en seis dominios: carga epidemiológica, provisión de servicios preventivos, financiamiento, tamizaje y detección precoz, vigilancia e infraestructura de información, y gobernanza de la calidad.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Esos seis dominios funcionan como plantilla para describir un sistema completo sin perderse. Sirve como estructura de un diagnóstico país y como guía de lectura para estudiantes.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">Journal of the American Geriatrics Society</span><span class="sep">·</span><span>27 sep 2026</span><span class="sep">·</span><span>Samant A et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42802388/">Local Adaptations of Hospital in Home: Variations in Structure and Implementation Across Six VA Programs</a></h3>
+        <p>Compara cómo seis programas del sistema de veteranos estadounidense implementaron un mismo modelo de hospitalización domiciliaria, con foco en las diferencias de estructura y de puesta en marcha entre sedes.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Documenta la variación local de un programa nominalmente único: el supuesto de "tratamiento homogéneo" que conviene revisar antes de estimar un efecto promedio en diseños escalonados.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ EPIDEMIOLOGÍA Y VIGILANCIA ============ -->
+  <section class="tema" id="sec-epi" data-hue="epi">
+    <div class="tema-cab">
+      <h2>Epidemiología y vigilancia</h2>
+      <span class="cuenta">4 artículos</span>
+    </div>
+    <div class="fichas">
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">Ciência &amp; Saúde Coletiva</span><span class="sep">·</span><span>21 sep 2026</span><span class="sep">·</span><span>Oliveira SC et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42788514/">Hospitalizations for ambulatory care-sensitive conditions in Brazil from 2000 to 2022: trends and challenges</a></h3>
+        <p>Estudio ecológico y longitudinal de las hospitalizaciones por condiciones sensibles a la atención ambulatoria en Brasil durante veintidós años, con las tendencias nacionales y el impacto de la pandemia.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Las condiciones sensibles a la atención ambulatoria son el indicador trazador clásico de desempeño del nivel primario, y aquí está construido con egresos administrativos latinoamericanos. Replicable casi tal cual con los datos de DEIS.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">Lupus Science &amp; Medicine</span><span class="sep">·</span><span>24 sep 2026</span><span class="sep">·</span><span>Arribas-Pérez L et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42785814/">National trends in hospitalisation, in-hospital mortality and resource use for SLE in Spain from 2016 to 2022</a></h3>
+        <p>Estudio nacional retrospectivo de cortes transversales repetidos, construido sobre los códigos de la Clasificación Internacional de Enfermedades en su décima revisión, con hospitalizaciones, mortalidad intrahospitalaria y uso de recursos.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Un diseño de cortes transversales repetidos sobre altas hospitalarias, bien documentado y en español-adyacente: buena plantilla metodológica para un trabajo equivalente con el GRD chileno.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">Epidemiology and Infection</span><span class="sep">·</span><span>24 sep 2026</span><span class="sep">·</span><span>Mitchell E et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42781498/">Social disparities and the COVID-19, influenza, and RSV 'tripledemic' in Ontario, Canada: A population-based study</a></h3>
+        <p>Estudio poblacional sobre las desigualdades sociales durante la circulación simultánea de tres virus respiratorios. Se usaron modelos de regresión local para ajustar las tasas semanales de hospitalización observadas dentro de cada año del estudio.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Combina vigilancia respiratoria con estratificación social, que es justo lo que falta en la mayoría de los informes de campaña de invierno. El uso de regresión local sobre series semanales es además un buen ejercicio para R.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">New Zealand Medical Journal</span><span class="sep">·</span><span>25 sep 2026</span><span class="sep">·</span><span>Wells S et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42784822/">Community prevalence of multimorbidity in Aotearoa New Zealand based on linked general practice and hospitalisation records</a></h3>
+        <p>Estimación de la prevalencia comunitaria de multimorbilidad a partir del enlace entre los registros de la práctica general y los de hospitalización.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Enlazar ficha de atención primaria con egresos hospitalarios es la infraestructura de datos que Chile todavía no explota. Vale la pena ver cómo resolvieron la definición de caso y el denominador poblacional.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ MÉTODOS Y CIENCIA DE DATOS ============ -->
+  <section class="tema" id="sec-met" data-hue="met">
+    <div class="tema-cab">
+      <h2>Métodos y ciencia de datos</h2>
+      <span class="cuenta">4 artículos</span>
+    </div>
+    <div class="fichas">
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">PLoS One</span><span class="sep">·</span><span>25 sep 2026</span><span class="sep">·</span><span>Galvez-Hernandez P et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42789529/">Artificial intelligence and machine learning for organizational and system-level functions in primary health care</a></h3>
+        <p>Revisión sobre el uso de inteligencia artificial y aprendizaje automático en funciones organizacionales y de sistema dentro de la atención primaria. Los autores sitúan el tema en las presiones actuales del nivel primario: envejecimiento poblacional, escasez de personal y recursos limitados.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Desplaza el foco de la predicción clínica individual a la gestión del sistema —agenda, derivación, asignación de recursos—, que es donde tu interés en datos se cruza con tu interés en políticas.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">Nutrients</span><span class="sep">·</span><span>21 sep 2026</span><span class="sep">·</span><span>Martínez-García M et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42797083/">Dietary Patterns and the Social Development Index in Mexico City: A Machine-Learning Approach</a></h3>
+        <p>Las ingestas por grupo de alimentos, ajustadas por energía, se analizaron con agrupamiento k-medias, y luego se usaron modelos supervisados con interpretación basada en valores SHAP para caracterizar la pertenencia a cada patrón.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Ejemplo latinoamericano y bien acotado de una secuencia que puedes reproducir en R: agrupar sin supervisión, predecir la pertenencia y después explicar el modelo. Los valores SHAP son una forma de mostrar cuánto aporta cada variable a una predicción concreta.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">BMC Medical Informatics and Decision Making</span><span class="sep">·</span><span>24 sep 2026</span><span class="sep">·</span><span>Koka Y et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42786471/">CleanSurvival: automated data preprocessing for time-to-event models using reinforcement learning</a></h3>
+        <p>Herramienta de preprocesamiento automatizado para modelos de tiempo hasta el evento. Los autores parten de que al preprocesamiento se le presta poca atención en aprendizaje automático, pese a su impacto potencial sobre el desempeño del modelo.</p>
+        <p class="porque"><b>Por qué mirarlo</b>El análisis de tiempo hasta el evento es el que usarás para medir demoras entre garantía, derivación e inicio de tratamiento. Vale como recordatorio de que las decisiones de limpieza pesan tanto como el modelo.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">Computers in Biology and Medicine</span><span class="sep">·</span><span>26 sep 2026</span><span class="sep">·</span><span>Rangaiah PKB et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42800260/">Duplicate leakage and evaluation integrity on a public synthetic sleep-health tabular dataset</a></h3>
+        <p>Auditoría de un conjunto de datos público muy reutilizado. Los autores señalan que estas bases se usan de forma habitual para comparar modelos de tamizaje en salud, y que casi nunca se audita la validez de esa evaluación.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Lectura corta y muy útil si estás partiendo: explica cómo registros duplicados entre entrenamiento y prueba inflan el desempeño aparente. Es el error que más fácil se comete y más difícil se detecta.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ METODOLOGÍA ============ -->
+  <section class="metodo" id="sec-metodo">
+    <h2>Cómo se arma este boletín</h2>
+    <p>
+      Cada lunes se ejecutan sobre PubMed las consultas de la tabla superior. Las cuatro primeras
+      llevan filtro de fecha de publicación acotado a los siete días previos; la quinta, dedicada a la
+      producción latinoamericana, usa catorce días. En todas el orden es descendente por fecha.
+      Se revisan los registros más recientes de cada consulta, se descartan los que no son
+      investigación en salud pública y se redactan las fichas de los seleccionados.
+      Esta misma página se actualiza con la nueva edición y conserva el enlace.
+    </p>
+
+    <h3>Fuentes</h3>
+    <ul>
+      <li><strong>PubMed</strong> es la fuente principal. Cubre las revistas indexadas en inglés y también las hispanas indexadas en MEDLINE: <em>Gaceta Sanitaria</em>, <em>Revista Española de Salud Pública</em>, <em>Salud Pública de México</em>, <em>Revista Panamericana de Salud Pública</em>, <em>Revista Médica de Chile</em>.</li>
+      <li><strong>LILACS/BVS y SciELO</strong> se evaluaron y quedaron descartados: ambos bloquean el acceso automatizado, de modo que no pueden incorporarse como segunda fuente. La cobertura latinoamericana se hace con la quinta consulta de PubMed, a catorce días.</li>
+      <li>Los enlaces apuntan al registro en PubMed. Cuando se dispone del identificador PMID el enlace es directo; en el resto de los casos es una búsqueda por título exacto.</li>
+    </ul>
+
+    <h3>Criterios de selección</h3>
+    <ul>
+      <li>Artículos originales, revisiones sistemáticas y documentos de consenso. Se excluyen cartas, editoriales y correcciones.</li>
+      <li>Se privilegian los estudios con datos poblacionales o administrativos por sobre las series clínicas.</li>
+      <li>Se prioriza lo publicado en América Latina y España cuando la calidad es comparable.</li>
+      <li>La línea <em>Por qué mirarlo</em> es un comentario de relevancia, no un hallazgo del artículo.</li>
+    </ul>
+
+    <h3>Ajustes posibles</h3>
+    <ul>
+      <li>Cambiar o agregar consultas temáticas.</li>
+      <li>Restringir a un conjunto fijo de revistas de alto impacto.</li>
+      <li>Ampliar la ventana de las consultas generales si una semana rinde poco.</li>
+      <li>Exportar cada edición a Word o guardarla en OneDrive además de esta página.</li>
+    </ul>
+
+    <div class="pendiente">
+      <b>Nota sobre esta edición.</b> La quinta consulta, <em>latin america health inequality</em> a catorce días,
+      no se pudo ejecutar: PubMed respondió alternadamente con error 429 por límite de peticiones y con
+      una página de verificación reCAPTCHA en siete intentos espaciados a lo largo de hora y media. Por eso
+      figura como "sin acceso" y el total de 169 registros revisados corresponde solo a las cuatro consultas
+      generales. La cobertura latinoamericana de esta edición proviene de esas cuatro: Brasil aparece con el
+      estudio de hospitalizaciones evitables y con el de atención de la menopausia, y México con el análisis
+      de patrones alimentarios. La primera consulta, <em>cancer screening inequality</em>, rindió apenas dos
+      registros en la semana, lo que explica que la edición traiga dieciséis fichas y no dieciocho.
+      Si la quinta consulta vuelve a fallar el próximo lunes, conviene probar con otros términos o mover
+      su ejecución a otra hora del día.
+    </div>
+
+    <h3>Declaración de transparencia e intereses</h3>
+    <p>
+      <strong>Cómo se produce esta página.</strong> Cada edición la genera un asistente de inteligencia
+      artificial (Claude, de Anthropic) que ejecuta de forma automática un conjunto fijo de búsquedas en
+      PubMed, aplica criterios de selección definidos de antemano y redacta las fichas. Los criterios los
+      estableció un académico de salud pública y están descritos en esta misma página. El proceso corre
+      cada lunes y nadie revisa el resultado antes de que se publique.
+    </p>
+    <p>
+      <strong>Qué implica.</strong> Las fichas se redactan a partir del título y del fragmento de resumen
+      que muestra PubMed, no del texto completo de los artículos. Ningún contenido pasa por revisión por
+      pares ni por verificación humana artículo por artículo. Un sistema de inteligencia artificial puede
+      cometer errores de interpretación, de atribución o de énfasis. El enlace al registro original es la
+      única fuente de verdad: consúltalo antes de citar.
+    </p>
+    <p>
+      <strong>Qué no es.</strong> Este boletín no es una revisión sistemática, no constituye recomendación
+      clínica ni de salud pública y no reemplaza la lectura de las fuentes primarias.
+    </p>
+    <p>
+      <strong>Intereses.</strong> El boletín no recibe financiamiento, patrocinio ni contraprestación de
+      ningún tipo. No existe vínculo comercial ni de otra naturaleza con las revistas, los autores o las
+      instituciones cuyos artículos se seleccionan. La única fuente consultada es PubMed, de la Biblioteca
+      Nacional de Medicina de Estados Unidos, a través de su interfaz pública.
+    </p>
+  </section>
+
+  <p class="pie">Edición 03 · generada el 28 de septiembre de 2026 · próxima edición: lunes 5 de octubre</p>
+
+  </div>
+
+</div>
+
+</body></html>

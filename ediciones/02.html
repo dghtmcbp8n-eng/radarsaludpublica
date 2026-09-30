@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Radar en Salud Pública · Edición 02</title>
+<meta name="description" content="Actualización semanal de evidencia en salud pública, epidemiología y metodología de la investigación, dirigida a la comunidad universitaria y al público general.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://radarsaludpublica.cl/ediciones/02">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Radar en Salud Pública">
+<meta property="og:title" content="Radar en Salud Pública · Edición 02">
+<meta property="og:description" content="Actualización semanal de evidencia en salud pública, epidemiología y metodología de la investigación, dirigida a la comunidad universitaria y al público general.">
+<meta property="og:url" content="https://radarsaludpublica.cl/ediciones/02">
+<meta property="og:locale" content="es_CL">
+<meta name="twitter:card" content="summary">
+<style>
+  html{scroll-padding-top:1rem}
+  body{margin:0;padding:0}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    color-scheme:dark;
+    --paper:#0d1618;
+    --surface:#152124;
+    --ink:#e4ecec;
+    --muted:#93a7ac;
+    --rule:#26363a;
+    --rule-soft:#1c2a2d;
+    --accent:#5cbfb6;
+    --t-onco:#d98ba3;
+    --t-sist:#7db4dd;
+    --t-epi:#79bf97;
+    --t-met:#d3a45f;
+    --shadow:0 1px 2px rgba(0,0,0,.3);
+
+    --max:70ch;
+    --step--1:.8125rem;
+    --step-0:1rem;
+    --step-1:1.1875rem;
+    --step-2:1.5rem;
+    --step-3:2rem;
+    --step-4:2.75rem;
+  }
+
+  *{box-sizing:border-box}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:var(--step-0);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-wrap:break-word;
+  }
+  h1,h2,h3,.q,.meta{overflow-wrap:break-word}
+  img,table{max-width:100%}
+  .wrap{max-width:calc(var(--max) + 8rem);margin:0 auto;padding:3.5rem 1.5rem 5rem}
+  a{color:inherit}
+  h1,h2,h3{font-family:Spectral,Georgia,serif;text-wrap:balance;margin:0;font-weight:600;line-height:1.2}
+
+  /* ---------- cabecera ---------- */
+  .masthead{border-bottom:1px solid var(--ink);padding-bottom:1.25rem}
+  .kicker{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:var(--step--1);letter-spacing:.14em;text-transform:uppercase;
+    color:var(--accent);margin:0 0 .75rem
+  }
+  h1{font-size:var(--step-4);letter-spacing:-.015em}
+  .edicion{
+    display:flex;flex-wrap:wrap;gap:.5rem 1.25rem;align-items:baseline;
+    margin-top:.85rem;font-family:"IBM Plex Mono",monospace;
+    font-size:var(--step--1);color:var(--muted)
+  }
+  .standfirst{
+    font-family:Spectral,Georgia,serif;font-size:var(--step-1);
+    max-width:var(--max);margin:1.75rem 0 0;color:var(--ink)
+  }
+
+  /* ---------- panel de búsqueda ---------- */
+  .busqueda{
+    margin:2.5rem 0 0;padding:1.25rem 1.4rem;
+    background:var(--surface);border:1px solid var(--rule-soft);
+  }
+  .busqueda h2{
+    font-family:"IBM Plex Mono",monospace;font-weight:500;
+    font-size:var(--step--1);letter-spacing:.12em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:1rem
+  }
+  .consultas{list-style:none;margin:0;padding:0;display:grid;gap:.7rem}
+  .consultas li{
+    display:grid;grid-template-columns:1fr auto;gap:.35rem 1rem;align-items:baseline;
+    padding-bottom:.7rem;border-bottom:1px solid var(--rule-soft)
+  }
+  .consultas li:last-child{border-bottom:0;padding-bottom:0}
+  .q{font-family:"IBM Plex Mono",monospace;font-size:var(--step--1)}
+  .n{
+    font-family:"IBM Plex Mono",monospace;font-size:var(--step--1);
+    color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap
+  }
+  .totales{
+    margin:1.1rem 0 0;padding-top:.9rem;border-top:1px solid var(--rule);
+    font-size:var(--step--1);color:var(--muted)
+  }
+  .totales strong{color:var(--ink);font-variant-numeric:tabular-nums}
+
+  /* ---------- secciones ---------- */
+  .tema{margin-top:3.5rem}
+  .tema-cab{
+    display:flex;align-items:baseline;gap:.9rem;
+    padding-bottom:.6rem;border-bottom:2px solid var(--hue)
+  }
+  .tema-cab h2{font-size:var(--step-2);color:var(--hue)}
+  .tema-cab .cuenta{
+    margin-left:auto;font-family:"IBM Plex Mono",monospace;
+    font-size:var(--step--1);color:var(--muted);font-variant-numeric:tabular-nums
+  }
+  .tema[data-hue="onco"]{--hue:var(--t-onco)}
+  .tema[data-hue="sist"]{--hue:var(--t-sist)}
+  .tema[data-hue="epi"]{--hue:var(--t-epi)}
+  .tema[data-hue="met"]{--hue:var(--t-met)}
+
+  .fichas{display:grid;gap:0;margin-top:.5rem}
+  .ficha{
+    padding:1.5rem 0;border-bottom:1px solid var(--rule-soft);
+    max-width:var(--max)
+  }
+  .ficha:last-child{border-bottom:0}
+  .meta{
+    font-family:"IBM Plex Mono",monospace;font-size:var(--step--1);
+    color:var(--muted);display:flex;flex-wrap:wrap;gap:.3rem .6rem;margin-bottom:.4rem
+  }
+  .meta .revista{color:var(--hue);font-weight:500}
+  .meta .sep{opacity:.45}
+  .ficha h3{font-size:var(--step-1);line-height:1.3}
+  .ficha h3 a{text-decoration:none;background-image:linear-gradient(var(--rule),var(--rule));background-size:100% 1px;background-position:0 100%;background-repeat:no-repeat;padding-bottom:.08em}
+  .ficha h3 a:hover{background-image:linear-gradient(var(--hue),var(--hue))}
+  .ficha p{margin:.55rem 0 0;color:var(--ink)}
+  .porque{
+    margin-top:.6rem;padding-left:.85rem;border-left:2px solid var(--hue);
+    font-size:var(--step--1);color:var(--muted)
+  }
+  .porque b{
+    font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:.9em;
+    letter-spacing:.06em;text-transform:uppercase;color:var(--hue);
+    display:block;margin-bottom:.15rem
+  }
+
+  /* ---------- metodología ---------- */
+  .metodo{
+    margin-top:4.5rem;padding-top:2rem;border-top:1px solid var(--ink);
+    max-width:var(--max)
+  }
+  .metodo h2{font-size:var(--step-2);margin-bottom:1rem}
+  .metodo h3{
+    font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:var(--step--1);
+    letter-spacing:.12em;text-transform:uppercase;color:var(--accent);
+    margin:1.9rem 0 .5rem
+  }
+  .metodo p{margin:.6rem 0;color:var(--muted)}
+  .metodo ul{margin:.6rem 0;padding-left:1.1rem;color:var(--muted)}
+  .metodo li{margin:.35rem 0}
+  .metodo strong{color:var(--ink);font-weight:600}
+  .pendiente{
+    margin-top:1.5rem;padding:1rem 1.2rem;background:var(--surface);
+    border-left:2px solid var(--accent);font-size:var(--step--1);color:var(--muted)
+  }
+  .pendiente b{color:var(--ink)}
+
+  .pie{
+    margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--rule);
+    font-family:"IBM Plex Mono",monospace;font-size:var(--step--1);color:var(--muted)
+  }
+
+  a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+  @media (max-width:640px){
+    :root{--step-4:2.05rem;--step-3:1.7rem;--step-2:1.3rem;--step-1:1.125rem}
+    .wrap,.shell{padding:2.25rem 1rem 3.25rem}
+    .consultas li{grid-template-columns:1fr}
+    .busqueda{padding:1rem 1.1rem}
+    .tema{margin-top:2.5rem}
+    .ficha{padding:1.25rem 0}
+    .metodo{margin-top:3.25rem}
+    .tema-cab{flex-wrap:wrap;gap:.35rem .7rem}
+    .tema-cab .cuenta{margin-left:0;width:100%}
+  }
+  @media (max-width:420px){
+    :root{--step-4:1.8rem}
+    .wrap,.shell{padding:2rem .9rem 3rem}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <p style="max-width:70ch;margin:0 0 2.25rem;padding:.75rem 1rem;background:var(--surface);border-left:2px solid var(--accent);font-family:'IBM Plex Mono',monospace;font-size:.8125rem;color:var(--muted)">
+    Edición archivada. <a href="../index.html" style="color:var(--accent)">Volver a la edición actual del Radar en Salud Pública</a>
+  </p>
+
+  <header class="masthead">
+    <p class="kicker">Boletín semanal · Salud pública</p>
+    <h1>Radar en Salud Pública</h1>
+    <div class="edicion">
+      <span>Edición 02</span>
+      <span>14 – 20 de septiembre de 2026</span>
+      <span>18 artículos de 209 revisados</span>
+    </div>
+  </header>
+
+  <p class="standfirst">
+    Lo publicado esta semana en cáncer y políticas, sistemas y servicios, epidemiología y vigilancia,
+    y métodos cuantitativos. Cada ficha indica revista, fecha y enlace al registro original.
+  </p>
+
+  <section class="busqueda">
+    <h2>Consultas ejecutadas en PubMed</h2>
+    <ul class="consultas">
+      <li>
+        <span class="q">cancer screening inequality</span>
+        <span class="n">7 registros</span>
+      </li>
+      <li>
+        <span class="q">health system access equity</span>
+        <span class="n">26 registros</span>
+      </li>
+      <li>
+        <span class="q">epidemiology surveillance population trends</span>
+        <span class="n">48 registros</span>
+      </li>
+      <li>
+        <span class="q">machine learning public health data</span>
+        <span class="n">128 registros</span>
+      </li>
+    </ul>
+    <p class="totales">
+      Filtro de fecha de publicación <strong>2026/09/14 – 2026/09/20</strong>,
+      orden por fecha descendente. Se revisaron los <strong>20</strong> registros más recientes de cada
+      consulta y se seleccionaron <strong>18</strong>.
+    </p>
+  </section>
+
+  <!-- ============ CÁNCER Y POLÍTICAS ============ -->
+  <section class="tema" data-hue="onco">
+    <div class="tema-cab">
+      <h2>Cáncer y políticas de salud</h2>
+      <span class="cuenta">5 artículos</span>
+    </div>
+    <div class="fichas">
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">Global Health Action</span><span class="sep">·</span><span>16 sep 2026</span><span class="sep">·</span><span>Scanlon B et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42746934/">How equity in cancer services has been defined and measured, and why it matters: a scoping review of Universal Health Coverage systems</a></h3>
+        <p>Revisión de alcance sobre cómo los sistemas con cobertura universal definen y miden la equidad en servicios oncológicos. Los autores parten de que la equidad en cáncer es una prioridad declarada en los sistemas comprometidos con reducir disparidades de acceso y resultados.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Es la pieza de la semana más cercana a tu marco: te da el vocabulario y los indicadores con que otros sistemas de cobertura universal operacionalizan la equidad, justo lo que necesitas para definir los desenlaces de la evaluación del GES.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">BMJ Open</span><span class="sep">·</span><span>16 sep 2026</span><span class="sep">·</span><span>Dixon LK et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42749376/">National trends, variation and short-term outcomes in surgery for non-small cell lung cancer in England, 2015–2023: a population-based cohort study using linked national cancer registration and hospital administrative data</a></h3>
+        <p>Cohorte poblacional que enlaza el registro nacional de cáncer con los datos administrativos hospitalarios para describir cambios temporales en la práctica quirúrgica, la variación entre centros y los resultados postoperatorios a corto plazo.</p>
+        <p class="porque"><b>Por qué mirarlo</b>El enlace registro de cáncer + egresos hospitalarios es exactamente la arquitectura de datos que necesitas en Chile (registro poblacional + GRD/DEIS), y aquí está documentada con nueve años de seguimiento.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">Cancer Epidemiology, Biomarkers &amp; Prevention</span><span class="sep">·</span><span>14 sep 2026</span><span class="sep">·</span><span>Blackman EL et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42734056/">AACR Cancer Disparities Progress Report 2026</a></h3>
+        <p>Informe anual de la AACR sobre disparidades en cáncer. Revisa los avances en prevención, detección precoz y tratamiento, y contrasta esas mejoras globales con las brechas que persisten entre grupos de población.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Material de referencia y docente: reúne en un solo documento la evidencia acumulada sobre desigualdades oncológicas, útil como marco de encuadre para la introducción de la propuesta FEI.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">BMJ Open</span><span class="sep">·</span><span>15 sep 2026</span><span class="sep">·</span><span>Cavers D et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42744380/">Pilot feasibility study to deliver low-dose CT lung cancer screening in Scotland: descriptive findings from the LungScot study</a></h3>
+        <p>Estudio piloto de factibilidad de tamizaje de pulmón con tomografía de baja dosis. El reclutamiento se hizo a partir del antecedente de tabaquismo registrado en la ficha electrónica de atención primaria, y los autores concluyen que esa estrategia es factible.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Ejemplo de cómo usar el registro clínico de la atención primaria como marco muestral para convocar a tamizaje: idea trasladable al uso de los registros de FONASA y de los CESFAM.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">Journal of Visualized Experiments</span><span class="sep">·</span><span>18 sep 2026</span><span class="sep">·</span><span>Wang H et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42762153/">Non-Invasive Colorectal Cancer Screening Using Stool- and Blood-Based Tests: Evidence, Feasibility, and Equity Considerations</a></h3>
+        <p>Revisión de las pruebas no invasivas de tamizaje colorrectal en deposiciones y sangre. Ordena las barreras de implementación a lo largo de toda la cadena: invitación, acceso a la prueba, devolución de la muestra, procesamiento y colonoscopía diagnóstica.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Esa cadena de pasos es un buen mapa de puntos de fuga para pensar dónde se pierde la gente entre el tamizaje y la confirmación diagnóstica, que es donde el GES suele quebrarse.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ SISTEMAS Y SERVICIOS ============ -->
+  <section class="tema" data-hue="sist">
+    <div class="tema-cab">
+      <h2>Sistemas y servicios de salud</h2>
+      <span class="cuenta">5 artículos</span>
+    </div>
+    <div class="fichas">
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">International Journal for Quality in Health Care</span><span class="sep">·</span><span>15 sep 2026</span><span class="sep">·</span><span>Aykut A et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42745485/">Physician Maldistribution Persisted Despite Health System Capacity Expansion in Türkiye, 2002–2023</a></h3>
+        <p>Veintiún años de expansión de infraestructura y capacidad del sistema turco, con la distribución de médicos como desenlace. Pese al crecimiento agregado, la mala distribución territorial se mantuvo.</p>
+        <p class="porque"><b>Por qué mirarlo</b>El hallazgo central —más capacidad instalada no equivale a acceso equitativo— es el argumento que sostiene tu pregunta sobre qué pasa cuando vence la garantía y el paciente debe ir a un segundo prestador.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">Infectious Diseases of Poverty</span><span class="sep">·</span><span>18 sep 2026</span><span class="sep">·</span><span>Belhassen-García M et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42760540/">Territorial inequities in access to essential medicines for neglected tropical diseases in a decentralised European health system: a nationwide assessment in Spain</a></h3>
+        <p>Evaluación nacional de la disponibilidad y accesibilidad de medicamentos esenciales en las comunidades autónomas españolas, con identificación de las barreras que impiden un acceso equitativo.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Caso español de desigualdad territorial dentro de un sistema descentralizado: el paralelo con la variación entre servicios de salud en Chile es directo y la metodología es sencilla de replicar.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">Neurosurgical Review</span><span class="sep">·</span><span>19 sep 2026</span><span class="sep">·</span><span>Soto GR et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42762245/">Management of metastatic spinal disease in low- and middle-income countries: an international survey of practices and challenges in Latin America</a></h3>
+        <p>Encuesta internacional sobre prácticas y dificultades en el manejo de la enfermedad metastásica de columna. Reporta demoras diagnósticas mayores en el sector público y en los países de ingreso medio-bajo, con acceso a biopsia en un 90,9 % del total.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Datos latinoamericanos sobre demoras diferenciales entre sector público y privado: evidencia comparativa escasa y pertinente para el problema de las garantías de oportunidad.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">Maternal and Child Health Journal</span><span class="sep">·</span><span>19 sep 2026</span><span class="sep">·</span><span>Ramos-Silva A et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42762276/">Congenital Syphilis in Brazil: Municipal Antenatal Care, Primary Health Care Capacity, and Territorial Inequalities, 2015–2024</a></h3>
+        <p>Describe los patrones espaciales de la sífilis congénita en Brasil y evalúa la asociación entre las notificaciones y la capacidad municipal de control prenatal y de atención primaria.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Modelo de análisis que vincula un desenlace evitable con la capacidad instalada del nivel primario a escala municipal: estructura aplicable a indicadores trazadores por comuna.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">BMJ Open</span><span class="sep">·</span><span>20 sep 2026</span><span class="sep">·</span><span>Rahja M et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42764187/">Association of long-term care facility ownership and location on residents' mortality and hospitalizations: a population-based retrospective cohort study in Australia</a></h3>
+        <p>Cohorte retrospectiva poblacional que compara residencias de cuidado de largo plazo según propiedad y ubicación. Los residentes de establecimientos estatales tuvieron menos eventos hospitalarios y los de establecimientos sin fines de lucro, menor mortalidad.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Comparación público–privado con desenlaces duros y datos poblacionales: un diseño limpio para una pregunta que en Chile suele discutirse sin datos.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ EPIDEMIOLOGÍA Y VIGILANCIA ============ -->
+  <section class="tema" data-hue="epi">
+    <div class="tema-cab">
+      <h2>Epidemiología y vigilancia</h2>
+      <span class="cuenta">4 artículos</span>
+    </div>
+    <div class="fichas">
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">Population Health Metrics</span><span class="sep">·</span><span>15 sep 2026</span><span class="sep">·</span><span>Gutiérrez-Lesmes OA et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42768356/">Burden of anxiety disorders in Colombia: subnational DALY estimates and territorial inequalities, 2016–2022</a></h3>
+        <p>Estimaciones subnacionales de AVAD para trastornos de ansiedad en Colombia. La tasa nacional estandarizada por edad pasó de 177,9 por 100.000 habitantes en 2016 a 687,4 por 100.000 en 2022.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Ejercicio latinoamericano de desagregación subnacional de carga de enfermedad: buen ejemplo de cómo bajar las estimaciones nacionales a escala territorial, y buen material de clase sobre AVAD.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">The Lancet Respiratory Medicine</span><span class="sep">·</span><span>17 sep 2026</span><span class="sep">·</span><span>GBD 2023 US Chronic Respiratory Disease Collaborators</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42753772/">State-level burden of chronic respiratory diseases in the USA, 1990–2023, with forecasts to 2050: a systematic analysis for the Global Burden of Disease Study 2023</a></h3>
+        <p>Análisis sistemático del GBD 2023 sobre la carga de enfermedades respiratorias crónicas en Estados Unidos entre 1990 y 2023, con proyecciones estatales hasta 2050.</p>
+        <p class="porque"><b>Por qué mirarlo</b>La combinación de serie histórica larga y proyección a nivel subnacional es la plantilla habitual del GBD: referencia útil si quieres hacer algo equivalente por región en Chile.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">Cancer Causes &amp; Control</span><span class="sep">·</span><span>18 sep 2026</span><span class="sep">·</span><span>Ali ME et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42754761/">Two decades of progress, persistent inequity: national trends in multiple myeloma mortality in the United States, 1999–2024</a></h3>
+        <p>Tendencias nacionales de mortalidad por mieloma múltiple en veinticinco años, con tasas ajustadas por edad y desagregación por grupos de población.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Muestra cómo una mejora agregada convive con brechas que no se cierran: el mismo patrón que probablemente encuentres al mirar la mortalidad por cáncer en Chile antes y después del GES.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">BMC Public Health</span><span class="sep">·</span><span>18 sep 2026</span><span class="sep">·</span><span>Bygdell M et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42760546/">Six decades of trends in BMI, thinness, overweight, and obesity among 210,927 Swedish children in different socioeconomic contexts</a></h3>
+        <p>Serie de seis décadas construida sobre una cohorte poblacional con mediciones de índice de masa corporal en niños de siete años entre 1952 y 2017, analizada por contexto socioeconómico.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Ejemplo poco común de serie antropométrica larga con estratificación social: sirve para discutir en clase la diferencia entre tendencia poblacional y brecha socioeconómica.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ MÉTODOS Y CIENCIA DE DATOS ============ -->
+  <section class="tema" data-hue="met">
+    <div class="tema-cab">
+      <h2>Métodos y ciencia de datos</h2>
+      <span class="cuenta">4 artículos</span>
+    </div>
+    <div class="fichas">
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">BMJ Mental Health</span><span class="sep">·</span><span>16 sep 2026</span><span class="sep">·</span><span>Saint-Dizier C et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42749337/">Regulatory reform and adult methylphenidate dispensing in France: a nationwide interrupted time-series study</a></h3>
+        <p>Serie de tiempo interrumpida de alcance nacional que evalúa el efecto de un cambio regulatorio sobre la dispensación del fármaco en adultos, con datos de farmacia de todo el país.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Es el antecedente metodológico más cercano a tu propuesta FEI: una norma que entra en vigor en una fecha definida, evaluada sobre registros administrativos completos. Buen modelo de cómo escribir los supuestos y el análisis de sensibilidad antes de pasar a diferencias en diferencias escalonadas.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">Journal of Gerontology: Medical Sciences</span><span class="sep">·</span><span>18 sep 2026</span><span class="sep">·</span><span>Park CM et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42760258/">Performance of Chronic Conditions Data Warehouse Algorithms in Medicare Advantage and Fee-For-Service Populations</a></h3>
+        <p>Evalúa el rendimiento de los algoritmos que identifican condiciones crónicas en bases administrativas, con comparación entre dos modalidades de aseguramiento y validación contra un estudio poblacional enlazado con datos de Medicare.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Recuerda que un algoritmo de identificación de casos puede comportarse distinto según el esquema de seguro. Directamente pertinente si vas a definir cohortes de cáncer mezclando FONASA e isapres.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">PLoS One</span><span class="sep">·</span><span>18 sep 2026</span><span class="sep">·</span><span>Xavier SP et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42758755/">Machine learning for predicting mortality in women diagnosed with breast cancer in the State of Mato Grosso, Brazil</a></h3>
+        <p>Modelos de aprendizaje automático aplicados a la predicción de mortalidad en mujeres con cáncer de mama en un estado brasileño. Los autores reportan un desempeño predictivo entre bueno y satisfactorio.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Ciencia de datos aplicada a un registro oncológico latinoamericano, con datos y escala comparables a los chilenos: buen punto de partida para tus primeros ejercicios en R.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">BMJ Health &amp; Care Informatics</span><span class="sep">·</span><span>18 sep 2026</span><span class="sep">·</span><span>Endehabtu BF et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42759970/">Predicting zero-dose vaccination status in 27 sub-Saharan African countries: a machine learning approach</a></h3>
+        <p>Modelo predictivo del riesgo de que un niño no reciba ninguna dosis de vacuna, construido sobre encuestas demográficas y de salud de veintisiete países.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Ejemplo claro de predicción con fines de focalización a partir de encuestas poblacionales: la lógica es la misma que usarías con CASEN o con los registros de FONASA para priorizar territorios.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ METODOLOGÍA ============ -->
+  <section class="metodo">
+    <h2>Cómo se arma este boletín</h2>
+    <p>
+      Cada lunes a las 08:00 se ejecutan las cuatro consultas de la tabla superior sobre PubMed,
+      con filtro de fecha de publicación acotado a los siete días previos y orden descendente.
+      Se revisan los registros más recientes de cada consulta, se descartan los que no son
+      investigación en salud pública y se redactan las fichas de los seleccionados.
+      Esta misma página se actualiza con la nueva edición y conserva el enlace.
+    </p>
+
+    <h3>Fuentes</h3>
+    <ul>
+      <li><strong>PubMed</strong> es la fuente principal. Cubre las revistas indexadas en inglés y también las hispanas indexadas en MEDLINE: <em>Gaceta Sanitaria</em>, <em>Revista Española de Salud Pública</em>, <em>Salud Pública de México</em>, <em>Revista Panamericana de Salud Pública</em>, <em>Revista Médica de Chile</em>.</li>
+      <li><strong>SciELO</strong> queda pendiente de habilitar como segunda fuente para las revistas latinoamericanas que no están en MEDLINE. Requiere autorizar el dominio una vez.</li>
+      <li>Los enlaces apuntan al registro en PubMed. Cuando se dispone del identificador PMID el enlace es directo; en el resto de los casos es una búsqueda por título exacto.</li>
+    </ul>
+
+    <h3>Criterios de selección</h3>
+    <ul>
+      <li>Artículos originales, revisiones sistemáticas y documentos de consenso. Se excluyen cartas, editoriales y correcciones.</li>
+      <li>Se privilegian los estudios con datos poblacionales o administrativos por sobre las series clínicas.</li>
+      <li>Se prioriza lo publicado en América Latina y España cuando la calidad es comparable.</li>
+      <li>La línea <em>Por qué mirarlo</em> es un comentario de relevancia, no un hallazgo del artículo.</li>
+    </ul>
+
+    <h3>Ajustes posibles</h3>
+    <ul>
+      <li>Cambiar o agregar consultas temáticas.</li>
+      <li>Restringir a un conjunto fijo de revistas de alto impacto.</li>
+      <li>Ampliar la ventana a catorce días si una semana rinde poco.</li>
+      <li>Exportar cada edición a Word o guardarla en OneDrive además de esta página.</li>
+    </ul>
+
+    <div class="pendiente">
+      <b>Nota sobre esta edición.</b> La ejecución automática del lunes 21 no pudo consultar PubMed porque la autorización
+      de acceso caducó sin respuesta, de modo que esta edición se generó el miércoles 23 de septiembre y mantiene
+      la ventana original del 14 al 20. Las cuatro consultas se ejecutaron con reintentos espaciados por el límite
+      de peticiones de PubMed, y los 209 registros informados son el conteo real que devolvió el buscador.
+      La próxima edición vuelve al calendario habitual con la semana del 21 al 27.
+    </div>
+  </section>
+
+  <p class="pie">Edición 02 · generada el 23 de septiembre de 2026 · próxima edición: lunes 28 de septiembre</p>
+
+</div>
+
+</body></html>

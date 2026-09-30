@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Página no encontrada · Radar en Salud Pública</title>
+<meta name="description" content="Actualización semanal de evidencia en salud pública, epidemiología y metodología de la investigación, dirigida a la comunidad universitaria y al público general.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://radarsaludpublica.cl/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Radar en Salud Pública">
+<meta property="og:title" content="Radar en Salud Pública">
+<meta property="og:description" content="Actualización semanal de evidencia en salud pública, epidemiología y metodología de la investigación, dirigida a la comunidad universitaria y al público general.">
+<meta property="og:url" content="https://radarsaludpublica.cl/">
+<meta property="og:locale" content="es_CL">
+<meta name="twitter:card" content="summary">
+<style>
+  html{scroll-padding-top:1rem}
+  body{margin:0;padding:0}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    color-scheme:dark;
+    --paper:#0d1618;
+    --surface:#152124;
+    --ink:#e4ecec;
+    --muted:#93a7ac;
+    --rule:#26363a;
+    --rule-soft:#1c2a2d;
+    --accent:#5cbfb6;
+    --t-onco:#d98ba3;
+    --t-sist:#7db4dd;
+    --t-epi:#79bf97;
+    --t-met:#d3a45f;
+    --shadow:0 1px 2px rgba(0,0,0,.3);
+
+    --max:70ch;
+    --step--1:.8125rem;
+    --step-0:1rem;
+    --step-1:1.1875rem;
+    --step-2:1.5rem;
+    --step-3:2rem;
+    --step-4:2.75rem;
+  }
+
+  *{box-sizing:border-box}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:var(--step-0);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-wrap:break-word;
+  }
+  h1,h2,h3,.q,.meta{overflow-wrap:break-word}
+  img,table{max-width:100%}
+  .wrap{max-width:calc(var(--max) + 8rem);margin:0 auto;padding:3.5rem 1.5rem 5rem}
+  a{color:inherit}
+  h1,h2,h3{font-family:Spectral,Georgia,serif;text-wrap:balance;margin:0;font-weight:600;line-height:1.2}
+
+  /* ---------- cabecera ---------- */
+  .masthead{border-bottom:1px solid var(--ink);padding-bottom:1.25rem}
+  .kicker{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:var(--step--1);letter-spacing:.14em;text-transform:uppercase;
+    color:var(--accent);margin:0 0 .75rem
+  }
+  h1{font-size:var(--step-4);letter-spacing:-.015em}
+  .edicion{
+    display:flex;flex-wrap:wrap;gap:.5rem 1.25rem;align-items:baseline;
+    margin-top:.85rem;font-family:"IBM Plex Mono",monospace;
+    font-size:var(--step--1);color:var(--muted)
+  }
+  .standfirst{
+    font-family:Spectral,Georgia,serif;font-size:var(--step-1);
+    max-width:var(--max);margin:1.75rem 0 0;color:var(--ink)
+  }
+
+  /* ---------- panel de búsqueda ---------- */
+  .busqueda{
+    margin:2.5rem 0 0;padding:1.25rem 1.4rem;
+    background:var(--surface);border:1px solid var(--rule-soft);
+  }
+  .busqueda h2{
+    font-family:"IBM Plex Mono",monospace;font-weight:500;
+    font-size:var(--step--1);letter-spacing:.12em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:1rem
+  }
+  .consultas{list-style:none;margin:0;padding:0;display:grid;gap:.7rem}
+  .consultas li{
+    display:grid;grid-template-columns:1fr auto;gap:.35rem 1rem;align-items:baseline;
+    padding-bottom:.7rem;border-bottom:1px solid var(--rule-soft)
+  }
+  .consultas li:last-child{border-bottom:0;padding-bottom:0}
+  .q{font-family:"IBM Plex Mono",monospace;font-size:var(--step--1)}
+  .n{
+    font-family:"IBM Plex Mono",monospace;font-size:var(--step--1);
+    color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap
+  }
+  .totales{
+    margin:1.1rem 0 0;padding-top:.9rem;border-top:1px solid var(--rule);
+    font-size:var(--step--1);color:var(--muted)
+  }
+  .totales strong{color:var(--ink);font-variant-numeric:tabular-nums}
+
+  /* ---------- secciones ---------- */
+  .tema{margin-top:3.5rem}
+  .tema-cab{
+    display:flex;align-items:baseline;gap:.9rem;
+    padding-bottom:.6rem;border-bottom:2px solid var(--hue)
+  }
+  .tema-cab h2{font-size:var(--step-2);color:var(--hue)}
+  .tema-cab .cuenta{
+    margin-left:auto;font-family:"IBM Plex Mono",monospace;
+    font-size:var(--step--1);color:var(--muted);font-variant-numeric:tabular-nums
+  }
+  .tema[data-hue="onco"]{--hue:var(--t-onco)}
+  .tema[data-hue="sist"]{--hue:var(--t-sist)}
+  .tema[data-hue="epi"]{--hue:var(--t-epi)}
+  .tema[data-hue="met"]{--hue:var(--t-met)}
+
+  .fichas{display:grid;gap:0;margin-top:.5rem}
+  .ficha{
+    padding:1.5rem 0;border-bottom:1px solid var(--rule-soft);
+    max-width:var(--max)
+  }
+  .ficha:last-child{border-bottom:0}
+  .meta{
+    font-family:"IBM Plex Mono",monospace;font-size:var(--step--1);
+    color:var(--muted);display:flex;flex-wrap:wrap;gap:.3rem .6rem;margin-bottom:.4rem
+  }
+  .meta .revista{color:var(--hue);font-weight:500}
+  .meta .sep{opacity:.45}
+  .ficha h3{font-size:var(--step-1);line-height:1.3}
+  .ficha h3 a{text-decoration:none;background-image:linear-gradient(var(--rule),var(--rule));background-size:100% 1px;background-position:0 100%;background-repeat:no-repeat;padding-bottom:.08em}
+  .ficha h3 a:hover{background-image:linear-gradient(var(--hue),var(--hue))}
+  .ficha p{margin:.55rem 0 0;color:var(--ink)}
+  .porque{
+    margin-top:.6rem;padding-left:.85rem;border-left:2px solid var(--hue);
+    font-size:var(--step--1);color:var(--muted)
+  }
+  .porque b{
+    font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:.9em;
+    letter-spacing:.06em;text-transform:uppercase;color:var(--hue);
+    display:block;margin-bottom:.15rem
+  }
+
+  /* ---------- metodología ---------- */
+  .metodo{
+    margin-top:4.5rem;padding-top:2rem;border-top:1px solid var(--ink);
+    max-width:var(--max)
+  }
+  .metodo h2{font-size:var(--step-2);margin-bottom:1rem}
+  .metodo h3{
+    font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:var(--step--1);
+    letter-spacing:.12em;text-transform:uppercase;color:var(--accent);
+    margin:1.9rem 0 .5rem
+  }
+  .metodo p{margin:.6rem 0;color:var(--muted)}
+  .metodo ul{margin:.6rem 0;padding-left:1.1rem;color:var(--muted)}
+  .metodo li{margin:.35rem 0}
+  .metodo strong{color:var(--ink);font-weight:600}
+  .pendiente{
+    margin-top:1.5rem;padding:1rem 1.2rem;background:var(--surface);
+    border-left:2px solid var(--accent);font-size:var(--step--1);color:var(--muted)
+  }
+  .pendiente b{color:var(--ink)}
+
+  .pie{
+    margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--rule);
+    font-family:"IBM Plex Mono",monospace;font-size:var(--step--1);color:var(--muted)
+  }
+
+  a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+  @media (max-width:640px){
+    :root{--step-4:2.05rem;--step-3:1.7rem;--step-2:1.3rem;--step-1:1.125rem}
+    .wrap,.shell{padding:2.25rem 1rem 3.25rem}
+    .consultas li{grid-template-columns:1fr}
+    .busqueda{padding:1rem 1.1rem}
+    .tema{margin-top:2.5rem}
+    .ficha{padding:1.25rem 0}
+    .metodo{margin-top:3.25rem}
+    .tema-cab{flex-wrap:wrap;gap:.35rem .7rem}
+    .tema-cab .cuenta{margin-left:0;width:100%}
+  }
+  @media (max-width:420px){
+    :root{--step-4:1.8rem}
+    .wrap,.shell{padding:2rem .9rem 3rem}
+  }
+
+  .aviso{
+    margin:1.6rem 0 0;padding:.9rem 1.15rem;
+    background:var(--surface);border-left:2px solid var(--accent);
+    font-size:var(--step--1);line-height:1.55;color:var(--muted);
+    max-width:var(--max)
+  }
+
+
+  /* ---------- navegacion ---------- */
+  .shell{max-width:calc(var(--max) + 22rem);margin:0 auto;padding:3.5rem 1.5rem 5rem}
+  .nav{margin:0 0 2.75rem;padding:0 0 1.35rem;border-bottom:1px solid var(--rule)}
+  .nav h2{
+    font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:var(--step--1);
+    letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 .7rem
+  }
+  .nav ul{list-style:none;margin:0;padding:0}
+  .nav-sec{display:flex;flex-wrap:wrap;gap:.4rem 1.1rem}
+  .nav-sec a{
+    font-size:var(--step--1);color:var(--muted);text-decoration:none;
+    border-bottom:1px solid transparent;padding-bottom:.1rem
+  }
+  .nav-sec a:hover{color:var(--ink);border-bottom-color:var(--accent)}
+  .archivo{margin-top:1.35rem}
+  .archivo summary{
+    font-family:"IBM Plex Mono",monospace;font-size:var(--step--1);
+    color:var(--accent);cursor:pointer
+  }
+  .archivo summary:hover{text-decoration:underline}
+  .archivo ul{margin:.75rem 0 0;display:grid;gap:.5rem}
+  .archivo a{font-size:var(--step--1);color:var(--muted);text-decoration:none;display:block}
+  .archivo a:hover{color:var(--ink)}
+  .archivo .fecha{opacity:.65}
+  .archivo .actual{color:var(--accent)}
+  .tema,.metodo{scroll-margin-top:2rem}
+
+  @media (min-width:1080px){
+    .shell{display:grid;grid-template-columns:12rem minmax(0,1fr);gap:4.5rem;align-items:start}
+    .nav{position:sticky;top:2.5rem;margin:0;padding:0;border-bottom:0}
+    .nav-sec{flex-direction:column;gap:.55rem}
+    .contenido{min-width:0}
+  }
+
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="shell">
+  <div class="contenido">
+
+    <header class="masthead">
+      <p class="kicker">Error 404</p>
+      <h1>Página no encontrada</h1>
+    </header>
+
+    <p class="standfirst">
+      La dirección que abriste no existe o dejó de estar disponible. Puede que la edición
+      que buscas esté archivada con otro número.
+    </p>
+
+    <p class="aviso">
+      <a href="/" style="color:var(--accent)">Ir a la edición actual del Radar en Salud Pública</a>
+    </p>
+
+  </div>
+</div>
+
+</body></html>
