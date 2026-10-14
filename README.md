@@ -7,9 +7,13 @@ Sitio: https://radarsaludpublica.cl
 
 ## Cómo funciona
 
-Cada lunes, una tarea automatizada ejecuta un conjunto fijo de búsquedas en PubMed
-y en Crossref, aplica criterios de selección definidos de antemano, redacta las fichas
-y actualiza este repositorio. Cloudflare Pages despliega el sitio con cada cambio.
+Cada lunes, una tarea automatizada ejecuta cinco búsquedas fijas en PubMed, aplica
+criterios de selección definidos de antemano, redacta las fichas y actualiza este
+repositorio. Cuatro de las búsquedas se acotan a los siete días previos; la quinta,
+dedicada a la producción latinoamericana, usa una ventana de catorce días, porque esa
+literatura entra a PubMed con más retraso. PubMed es la única fuente: LILACS/BVS,
+SciELO y Web of Science se evaluaron y quedaron descartadas, las dos primeras porque
+bloquean el acceso automatizado y la tercera porque exige credenciales institucionales. Cloudflare Pages despliega el sitio con cada cambio.
 
 La página declara de forma permanente que se genera con inteligencia artificial y que
 nadie revisa el resultado antes de publicarlo. Los criterios de selección están
