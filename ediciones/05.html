@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Radar en Salud Pública · Edición 05</title>
+<meta name="description" content="Actualización semanal de evidencia en salud pública, epidemiología y metodología de la investigación, dirigida a la comunidad universitaria y al público general.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://radarsaludpublica.cl/ediciones/05">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Radar en Salud Pública">
+<meta property="og:title" content="Radar en Salud Pública · Edición 05">
+<meta property="og:description" content="Actualización semanal de evidencia en salud pública, epidemiología y metodología de la investigación, dirigida a la comunidad universitaria y al público general.">
+<meta property="og:url" content="https://radarsaludpublica.cl/ediciones/05">
+<meta property="og:locale" content="es_CL">
+<meta name="twitter:card" content="summary">
+<style>
+  html{scroll-padding-top:1rem}
+  body{margin:0;padding:0}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    color-scheme:dark;
+    --paper:#0d1618;
+    --surface:#152124;
+    --ink:#e4ecec;
+    --muted:#93a7ac;
+    --rule:#26363a;
+    --rule-soft:#1c2a2d;
+    --accent:#5cbfb6;
+    --t-onco:#d98ba3;
+    --t-sist:#7db4dd;
+    --t-epi:#79bf97;
+    --t-met:#d3a45f;
+    --shadow:0 1px 2px rgba(0,0,0,.3);
+
+    --max:70ch;
+    --step--1:.8125rem;
+    --step-0:1rem;
+    --step-1:1.1875rem;
+    --step-2:1.5rem;
+    --step-3:2rem;
+    --step-4:2.75rem;
+  }
+
+  *{box-sizing:border-box}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:var(--step-0);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-wrap:break-word;
+  }
+  h1,h2,h3,.q,.meta{overflow-wrap:break-word}
+  img,table{max-width:100%}
+  .wrap{max-width:calc(var(--max) + 8rem);margin:0 auto;padding:3.5rem 1.5rem 5rem}
+  a{color:inherit}
+  h1,h2,h3{font-family:Spectral,Georgia,serif;text-wrap:balance;margin:0;font-weight:600;line-height:1.2}
+
+  /* ---------- cabecera ---------- */
+  .masthead{border-bottom:1px solid var(--ink);padding-bottom:1.25rem}
+  .kicker{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:var(--step--1);letter-spacing:.14em;text-transform:uppercase;
+    color:var(--accent);margin:0 0 .75rem
+  }
+  h1{font-size:var(--step-4);letter-spacing:-.015em}
+  .edicion{
+    display:flex;flex-wrap:wrap;gap:.5rem 1.25rem;align-items:baseline;
+    margin-top:.85rem;font-family:"IBM Plex Mono",monospace;
+    font-size:var(--step--1);color:var(--muted)
+  }
+  .standfirst{
+    font-family:Spectral,Georgia,serif;font-size:var(--step-1);
+    max-width:var(--max);margin:1.75rem 0 0;color:var(--ink)
+  }
+
+  /* ---------- panel de búsqueda ---------- */
+  .busqueda{
+    margin:2.5rem 0 0;padding:1.25rem 1.4rem;
+    background:var(--surface);border:1px solid var(--rule-soft);
+  }
+  .busqueda h2{
+    font-family:"IBM Plex Mono",monospace;font-weight:500;
+    font-size:var(--step--1);letter-spacing:.12em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:1rem
+  }
+  .consultas{list-style:none;margin:0;padding:0;display:grid;gap:.7rem}
+  .consultas li{
+    display:grid;grid-template-columns:1fr auto;gap:.35rem 1rem;align-items:baseline;
+    padding-bottom:.7rem;border-bottom:1px solid var(--rule-soft)
+  }
+  .consultas li:last-child{border-bottom:0;padding-bottom:0}
+  .q{font-family:"IBM Plex Mono",monospace;font-size:var(--step--1)}
+  .n{
+    font-family:"IBM Plex Mono",monospace;font-size:var(--step--1);
+    color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap
+  }
+  .totales{
+    margin:1.1rem 0 0;padding-top:.9rem;border-top:1px solid var(--rule);
+    font-size:var(--step--1);color:var(--muted)
+  }
+  .totales strong{color:var(--ink);font-variant-numeric:tabular-nums}
+
+  /* ---------- secciones ---------- */
+  .tema{margin-top:3.5rem}
+  .tema-cab{
+    display:flex;align-items:baseline;gap:.9rem;
+    padding-bottom:.6rem;border-bottom:2px solid var(--hue)
+  }
+  .tema-cab h2{font-size:var(--step-2);color:var(--hue)}
+  .tema-cab .cuenta{
+    margin-left:auto;font-family:"IBM Plex Mono",monospace;
+    font-size:var(--step--1);color:var(--muted);font-variant-numeric:tabular-nums
+  }
+  .tema[data-hue="onco"]{--hue:var(--t-onco)}
+  .tema[data-hue="sist"]{--hue:var(--t-sist)}
+  .tema[data-hue="epi"]{--hue:var(--t-epi)}
+  .tema[data-hue="met"]{--hue:var(--t-met)}
+
+  .fichas{display:grid;gap:0;margin-top:.5rem}
+  .ficha{
+    padding:1.5rem 0;border-bottom:1px solid var(--rule-soft);
+    max-width:var(--max)
+  }
+  .ficha:last-child{border-bottom:0}
+  .meta{
+    font-family:"IBM Plex Mono",monospace;font-size:var(--step--1);
+    color:var(--muted);display:flex;flex-wrap:wrap;gap:.3rem .6rem;margin-bottom:.4rem
+  }
+  .meta .revista{color:var(--hue);font-weight:500}
+  .meta .sep{opacity:.45}
+  .ficha h3{font-size:var(--step-1);line-height:1.3}
+  .ficha h3 a{text-decoration:none;background-image:linear-gradient(var(--rule),var(--rule));background-size:100% 1px;background-position:0 100%;background-repeat:no-repeat;padding-bottom:.08em}
+  .ficha h3 a:hover{background-image:linear-gradient(var(--hue),var(--hue))}
+  .ficha p{margin:.55rem 0 0;color:var(--ink)}
+  .porque{
+    margin-top:.6rem;padding-left:.85rem;border-left:2px solid var(--hue);
+    font-size:var(--step--1);color:var(--muted)
+  }
+  .porque b{
+    font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:.9em;
+    letter-spacing:.06em;text-transform:uppercase;color:var(--hue);
+    display:block;margin-bottom:.15rem
+  }
+
+  /* ---------- metodología ---------- */
+  .metodo{
+    margin-top:4.5rem;padding-top:2rem;border-top:1px solid var(--ink);
+    max-width:var(--max)
+  }
+  .metodo h2{font-size:var(--step-2);margin-bottom:1rem}
+  .metodo h3{
+    font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:var(--step--1);
+    letter-spacing:.12em;text-transform:uppercase;color:var(--accent);
+    margin:1.9rem 0 .5rem
+  }
+  .metodo p{margin:.6rem 0;color:var(--muted)}
+  .metodo ul{margin:.6rem 0;padding-left:1.1rem;color:var(--muted)}
+  .metodo li{margin:.35rem 0}
+  .metodo strong{color:var(--ink);font-weight:600}
+  .pendiente{
+    margin-top:1.5rem;padding:1rem 1.2rem;background:var(--surface);
+    border-left:2px solid var(--accent);font-size:var(--step--1);color:var(--muted)
+  }
+  .pendiente b{color:var(--ink)}
+
+  .pie{
+    margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--rule);
+    font-family:"IBM Plex Mono",monospace;font-size:var(--step--1);color:var(--muted)
+  }
+
+  a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+  @media (max-width:640px){
+    :root{--step-4:2.05rem;--step-3:1.7rem;--step-2:1.3rem;--step-1:1.125rem}
+    .wrap,.shell{padding:2.25rem 1rem 3.25rem}
+    .consultas li{grid-template-columns:1fr}
+    .busqueda{padding:1rem 1.1rem}
+    .tema{margin-top:2.5rem}
+    .ficha{padding:1.25rem 0}
+    .metodo{margin-top:3.25rem}
+    .tema-cab{flex-wrap:wrap;gap:.35rem .7rem}
+    .tema-cab .cuenta{margin-left:0;width:100%}
+  }
+  @media (max-width:420px){
+    :root{--step-4:1.8rem}
+    .wrap,.shell{padding:2rem .9rem 3rem}
+  }
+
+  .aviso{
+    margin:1.6rem 0 0;padding:.9rem 1.15rem;
+    background:var(--surface);border-left:2px solid var(--accent);
+    font-size:var(--step--1);line-height:1.55;color:var(--muted);
+    max-width:var(--max)
+  }
+
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <p style="max-width:70ch;margin:0 0 2.25rem;padding:.75rem 1rem;background:var(--surface);border-left:2px solid var(--accent);font-family:'IBM Plex Mono',monospace;font-size:.8125rem;color:var(--muted)">
+    Edición archivada. <a href="../index.html" style="color:var(--accent)">Volver a la edición actual del Radar en Salud Pública</a>
+  </p>
+
+  <header class="masthead">
+    <p class="kicker">Boletín semanal · Salud pública</p>
+    <h1>Radar en Salud Pública</h1>
+    <div class="edicion">
+      <span>Edición 05</span>
+      <span>5 – 11 de octubre de 2026</span>
+      <span>16 artículos de 183 revisados</span>
+    </div>
+  </header>
+
+  <p class="standfirst">
+    Lo publicado esta semana en cáncer y políticas, sistemas y servicios, epidemiología y vigilancia,
+    y métodos cuantitativos. Cada ficha indica revista, fecha y enlace al registro original.
+  </p>
+
+  <p class="aviso">
+    Página generada con inteligencia artificial y actualizada de forma automática cada lunes,
+    según criterios preestablecidos. Las fichas se redactan a partir de la información que entrega
+    PubMed, no del texto completo de los artículos. Revisa siempre la fuente original antes de citar.
+  </p>
+
+  <section class="busqueda">
+    <h2>Consultas ejecutadas en PubMed</h2>
+    <ul class="consultas">
+      <li>
+        <span class="q">cancer screening inequality</span>
+        <span class="n">6 registros</span>
+      </li>
+      <li>
+        <span class="q">health system access equity</span>
+        <span class="n">35 registros</span>
+      </li>
+      <li>
+        <span class="q">epidemiology surveillance population trends</span>
+        <span class="n">52 registros</span>
+      </li>
+      <li>
+        <span class="q">machine learning public health data</span>
+        <span class="n">79 registros</span>
+      </li>
+      <li>
+        <span class="q">latin america health inequality</span>
+        <span class="n">11 registros</span>
+      </li>
+    </ul>
+    <p class="totales">
+      Las cuatro primeras consultas usan filtro de fecha de publicación
+      <strong>2026/10/05 – 2026/10/11</strong> (siete días). La quinta, dedicada a la producción
+      latinoamericana, usa una ventana de catorce días,
+      <strong>2026/09/28 – 2026/10/11</strong>, porque esa literatura entra a PubMed con retraso.
+      Orden por fecha descendente en todas. Se revisaron hasta los <strong>20</strong> registros más
+      recientes de cada consulta y se seleccionaron <strong>16</strong>.
+    </p>
+  </section>
+
+  <!-- ============ CÁNCER Y POLÍTICAS ============ -->
+  <section class="tema" id="sec-onco" data-hue="onco">
+    <div class="tema-cab">
+      <h2>Cáncer y políticas de salud</h2>
+      <span class="cuenta">4 artículos</span>
+    </div>
+    <div class="fichas">
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">JNCI Cancer Spectrum</span><span class="sep">·</span><span>10 oct 2026</span><span class="sep">·</span><span>Asante D et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42860041/">Historical redlining and breast cancer screening in a regional spatial analysis</a></h3>
+        <p>Análisis espacial regional que vincula el <em>redlining</em> de 1933 —la delimitación oficial de barrios según riesgo crediticio— con el tamizaje actual de cáncer de mama. Los autores presentan esa práctica como origen de desigualdades estructurales persistentes en vivienda, inversión barrial y acceso a la atención.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Es un ejercicio de exposición histórica medida a nivel de territorio, no de individuo. Si alguna vez quieres explicar por qué dos comunas con el mismo ingreso actual tienen coberturas distintas, este es el tipo de variable que falta en el modelo.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">Journal of Public Health (Oxford)</span><span class="sep">·</span><span>7 oct 2026</span><span class="sep">·</span><span>Meaden R et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42842613/">Reducing socio-economic inequalities in bowel cancer screening: a systematic review of intervention strategies amongst deprived communities</a></h3>
+        <p>Revisión sistemática de las estrategias de intervención para aumentar la participación en el tamizaje de cáncer colorrectal en comunidades desfavorecidas. Los autores parten de una participación subóptima en el Reino Unido con gradiente socioeconómico y recomiendan codiseñar las intervenciones con esas comunidades.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Es la ficha más aplicable de la edición: pasa del diagnóstico de la brecha a qué se ha probado para cerrarla. Útil como catálogo de intervenciones evaluables si piensas en el tamizaje chileno de colon, hoy sin programa poblacional.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">Ethnicity &amp; Health</span><span class="sep">·</span><span>8 oct 2026</span><span class="sep">·</span><span>Mahmood A et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42847504/">Racial residential segregation and receipt of breast cancer screening in the United States: a national cross-sectional study, 2020</a></h3>
+        <p>Estudio transversal nacional sobre 1 329 mujeres de 40 a 75 años, con datos de la encuesta HINTS, que examina cómo la segregación residencial se asocia con haber recibido tamizaje de cáncer de mama. El argumento de fondo es que los determinantes comunitarios, y no solo los individuales, influyen en la cobertura.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Pareado con la ficha del <em>redlining</em>, te deja ver el mismo problema con dos diseños distintos: uno espacial e histórico, otro de encuesta individual con contexto. Buena pareja para discutir en clase qué aporta y qué pierde cada enfoque.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">BJGP Open</span><span class="sep">·</span><span>8 oct 2026</span><span class="sep">·</span><span>Ong AL et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42850026/">Impact of a national enrolment programme on preventive care uptake in Singapore: a cohort study of 268,315 patients</a></h3>
+        <p>Cohorte de 268 315 adultos de 40 años o más con al menos dos consultas anuales entre 2018 y 2024, que evalúa el efecto de un programa nacional de inscripción con un médico de cabecera. Los desenlaces son la cobertura de tamizaje cervicouterino, la vacunación y el tamizaje de riesgo cardiovascular.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Es lo más parecido en esta edición a lo que tú quieres hacer: una política nacional de organización de la atención evaluada sobre registros administrativos, con desenlaces de proceso medidos antes y después. Mira cómo definen la exposición, porque inscribirse no es aleatorio y ese es tu mismo problema.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ SISTEMAS Y SERVICIOS ============ -->
+  <section class="tema" id="sec-sist" data-hue="sist">
+    <div class="tema-cab">
+      <h2>Sistemas y servicios de salud</h2>
+      <span class="cuenta">4 artículos</span>
+    </div>
+    <div class="fichas">
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">BMJ Public Health</span><span class="sep">·</span><span>5 oct 2026</span><span class="sep">·</span><span>Hone T et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42851739/">Fragmentation in health system financing: a major challenge for improving effectiveness, efficiency, equity and choice within health systems</a></h3>
+        <p>Artículo que define la fragmentación como la falta de coordinación entre las funciones del sistema de salud y la examina con foco en el financiamiento. Los autores la presentan como un obstáculo para la efectividad, la eficiencia, la equidad y la capacidad de elección.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Pocos sistemas ilustran la fragmentación del financiamiento mejor que el chileno, con Fonasa, isapres, mutuales y las Fuerzas Armadas en paralelo. Te sirve como marco conceptual citable cuando necesites nombrar el problema sin quedarte en la anécdota local.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">Public Health Challenges</span><span class="sep">·</span><span>8 oct 2026</span><span class="sep">·</span><span>Olpengs D et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42856778/">Implications of Kenya's Enhanced Public Officers Medical Scheme on equity in strategic purchasing and progress towards universal health coverage</a></h3>
+        <p>Analiza la transición del seguro nacional keniano (NHIF) al nuevo esquema (SHA) en 2024 y el régimen complementario para funcionarios públicos. Los autores advierten que ese esquema podría consolidar un sistema de dos niveles dentro de la cobertura universal.</p>
+        <p class="porque"><b>Por qué mirarlo</b>El riesgo que describen —un paquete mejor para un grupo con capacidad de pago, dentro del mismo sistema público— es el debate chileno de siempre, planteado desde otro continente. Leerlo fuera del caso propio ayuda a separar el argumento técnico del político.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">Journal of Medical Internet Research</span><span class="sep">·</span><span>8 oct 2026</span><span class="sep">·</span><span>Ito H et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42849039/">Trends in age and socioeconomic inequalities in telemedicine adoption in Japan, 2020–2024: longitudinal panel study</a></h3>
+        <p>Estudio de panel longitudinal con una encuesta por internet a población general japonesa de 18 a 75 años, respondida en 2020 y en 2024. La pregunta es si las brechas de adopción de telemedicina por edad y nivel socioeconómico se reducen con el tiempo o se mantienen.</p>
+        <p class="porque"><b>Por qué mirarlo</b>La hipótesis de que una tecnología nueva primero amplía la brecha y luego la cierra casi nunca se pone a prueba con datos de panel. Es un buen antecedente antes de evaluar la telemedicina que quedó instalada en el sistema chileno tras la pandemia.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">Journal of Prevention</span><span class="sep">·</span><span>oct 2026</span><span class="sep">·</span><span>Sørensen K et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42183974/">Health literacy in Latin America and the Caribbean: a comprehensive scoping review of research developments</a></h3>
+        <p>Revisión exploratoria del desarrollo de la investigación sobre alfabetización en salud en América Latina y el Caribe. Los autores describen una agenda que gana impulso en la región y señalan tanto los avances como los desafíos pendientes.</p>
+        <p class="porque"><b>Por qué mirarlo</b>La alfabetización en salud es el eslabón que explica por qué una garantía existente no se usa: si la persona no sabe que tiene derecho a algo, la garantía no opera. Es directamente pertinente para entender qué ocurre al vencer un plazo GES.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ EPIDEMIOLOGÍA Y VIGILANCIA ============ -->
+  <section class="tema" id="sec-epi" data-hue="epi">
+    <div class="tema-cab">
+      <h2>Epidemiología y vigilancia</h2>
+      <span class="cuenta">4 artículos</span>
+    </div>
+    <div class="fichas">
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">Revista Panamericana de Salud Pública</span><span class="sep">·</span><span>8 oct 2026</span><span class="sep">·</span><span>Nathaniel S et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42852081/">Dengue and other arbovirus laboratory trends in the Caribbean: an analysis of surveillance data, 2018–2024</a></h3>
+        <p>Análisis retrospectivo de los datos de vigilancia de laboratorio del Caribe entre 2018 y 2024, construido con las muestras clínicas derivadas al laboratorio de referencia. Describe los patrones de circulación de arbovirus, la distribución de serotipos y sus tendencias en el período.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Es el ejemplo regional de la edición de vigilancia de laboratorio usada como fuente epidemiológica, con todo lo que eso implica: lo que se detecta depende de quién manda la muestra. Buen material para enseñar sesgo de verificación con un caso cercano.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">Journal of Global Health</span><span class="sep">·</span><span>9 oct 2026</span><span class="sep">·</span><span>Peichoto ME et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42852600/">Strengthening public health programmes and the antivenom ecosystem: strategic policy priorities to combat envenomation by animal bites and stings in Latin America and the Caribbean</a></h3>
+        <p>Documento de prioridades estratégicas sobre los envenenamientos por serpientes, escorpiones, arañas y orugas en América Latina y el Caribe. Los autores sostienen que el problema sigue mal atendido de forma homogénea en la región y que el cambio ambiental y la urbanización están modificando su distribución.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Es un caso claro de enfermedad desatendida con producto de tratamiento escaso, donde la política pública pasa por asegurar la disponibilidad antes que por el acto clínico. El paralelo con los medicamentos de alto costo en Chile se arma solo.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">BJGP Open</span><span class="sep">·</span><span>8 oct 2026</span><span class="sep">·</span><span>Raveendran V et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42850025/">Trends in long COVID and post-viral fatigue in children in primary care in England</a></h3>
+        <p>Examina los patrones temporales, estacionales y sociodemográficos de las consultas por COVID prolongado y fatiga postviral en menores atendidos en atención primaria inglesa. Trabaja con los registros clínicos electrónicos de la base CPRD Aurum.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Mide una condición sin prueba diagnóstica a partir de lo que el médico registra, de modo que la tendencia observada mezcla incidencia real con cambios en el registro. Ese problema aparecerá en cualquier análisis que hagas con datos de ficha clínica.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">Medicine (Baltimore)</span><span class="sep">·</span><span>9 oct 2026</span><span class="sep">·</span><span>Jiang L et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42854069/">National trends in infection-related mortality among US cancer decedents in the immunotherapy era (1999–2023)</a></h3>
+        <p>Análisis de las tendencias nacionales de mortalidad relacionada con infecciones entre las personas fallecidas con cáncer en Estados Unidos durante veinticinco años. Los autores señalan que los patrones poblacionales de participación de la infección en esas muertes están poco caracterizados en la era de los inhibidores de puntos de control.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Usa causas múltiples de muerte, no solo la causa básica, que es un recurso poco explotado y disponible también en los registros chilenos del DEIS. Permite preguntas que la causa única deja fuera.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ MÉTODOS Y CIENCIA DE DATOS ============ -->
+  <section class="tema" id="sec-met" data-hue="met">
+    <div class="tema-cab">
+      <h2>Métodos y ciencia de datos</h2>
+      <span class="cuenta">4 artículos</span>
+    </div>
+    <div class="fichas">
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">Public Health Challenges</span><span class="sep">·</span><span>9 oct 2026</span><span class="sep">·</span><span>Hossain MS et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42857756/">Comparison of machine learning classifiers for predicting reported antibiotic treatment following recent fever or cough in children under five: a pooled analysis of DHS data from 64 low- and middle-income countries</a></h3>
+        <p>Compara la regresión logística con cinco algoritmos de aprendizaje automático para predecir el tratamiento antibiótico reportado en menores de cinco años con fiebre o tos reciente. Agrupa las encuestas demográficas y de salud de 64 países de ingreso bajo y mediano.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Es la lectura más formativa de la edición si estás empezando en ciencia de datos: la comparación honesta entre un modelo clásico y varios algoritmos, sobre encuestas poblacionales y no sobre datos clínicos. Fíjate en si el salto de desempeño justifica perder la interpretabilidad.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">International Journal of Medical Informatics</span><span class="sep">·</span><span>8 oct 2026</span><span class="sep">·</span><span>Abebe HB et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42858736/">Evaluating machine learning models for predicting postpartum depression symptoms using Mississippi PRAMS data 2016–2022</a></h3>
+        <p>Evalúa el desempeño de varios modelos de aprendizaje automático para predecir síntomas de depresión posparto a partir del sistema de vigilancia PRAMS de Misisipi entre 2016 y 2022. El punto de partida es la depresión posparto entendida como problema de salud pública.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Muestra cómo se reutiliza un sistema de vigilancia ya existente para construir un modelo predictivo, sin levantar datos nuevos. Es la ruta más realista para trabajar con las encuestas y registros chilenos que ya están publicados.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">JMIR Formative Research</span><span class="sep">·</span><span>9 oct 2026</span><span class="sep">·</span><span>Kuwayama T et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42854674/">Doctorless areas in Japan: typological classification based on regional demographic characteristics</a></h3>
+        <p>Clasifica las llamadas áreas sin médicos de Japón según las características demográficas de cada territorio. El objetivo declarado es distinguir tipos de zona para diseñar estrategias diferenciadas que mejoren el acceso a la atención.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Agrupar territorios antes de intervenir es una decisión metodológica que casi siempre se toma sin método, por región administrativa. Aplicable casi tal cual a las zonas rurales y aisladas chilenas.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">PLoS One</span><span class="sep">·</span><span>30 sep 2026</span><span class="sep">·</span><span>López-González A et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42814685/">Strengthening alcohol consumption screening in primary care for culturally diverse populations in Latin America: adaptation and content and face validity of the AUDIT in Guaviare, Colombia</a></h3>
+        <p>Adaptación cultural del cuestionario AUDIT de la OMS para su uso en atención primaria en Guaviare, Colombia, con evaluación de validez de contenido y de apariencia. Los autores señalan que existen versiones en español del instrumento, pero ninguna adaptada a ese contexto.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Recuerda algo que se pasa por alto en los proyectos de tus estudiantes: un instrumento validado en otro país no llega validado aquí. Es un ejemplo corto y bien delimitado de las dos primeras validaciones que corresponde hacer.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ METODOLOGÍA ============ -->
+  <section class="metodo">
+    <h2>Cómo se arma este boletín</h2>
+    <p>
+      Cada lunes se ejecutan sobre PubMed las consultas de la tabla superior. Las cuatro primeras
+      llevan filtro de fecha de publicación acotado a los siete días previos; la quinta, dedicada a la
+      producción latinoamericana, usa catorce días. En todas el orden es descendente por fecha.
+      Se revisan los registros más recientes de cada consulta, se descartan los que no son
+      investigación en salud pública y se redactan las fichas de los seleccionados.
+      Esta misma página se actualiza con la nueva edición y conserva el enlace.
+    </p>
+
+    <h3>Fuentes</h3>
+    <ul>
+      <li><strong>PubMed</strong> es la fuente principal. Cubre las revistas indexadas en inglés y también las hispanas indexadas en MEDLINE: <em>Gaceta Sanitaria</em>, <em>Revista Española de Salud Pública</em>, <em>Salud Pública de México</em>, <em>Revista Panamericana de Salud Pública</em>, <em>Revista Médica de Chile</em>.</li>
+      <li><strong>LILACS/BVS y SciELO</strong> se evaluaron y quedaron descartados: ambos bloquean el acceso automatizado, de modo que no pueden incorporarse como segunda fuente. La cobertura latinoamericana se hace con la quinta consulta de PubMed, a catorce días.</li>
+      <li>Los enlaces apuntan al registro en PubMed. Cuando se dispone del identificador PMID el enlace es directo; en el resto de los casos es una búsqueda por título exacto.</li>
+    </ul>
+
+    <h3>Criterios de selección</h3>
+    <ul>
+      <li>Artículos originales, revisiones sistemáticas y documentos de consenso. Se excluyen cartas, editoriales y correcciones.</li>
+      <li>Se privilegian los estudios con datos poblacionales o administrativos por sobre las series clínicas.</li>
+      <li>Se prioriza lo publicado en América Latina y España cuando la calidad es comparable.</li>
+      <li>La línea <em>Por qué mirarlo</em> es un comentario de relevancia, no un hallazgo del artículo.</li>
+    </ul>
+
+    <h3>Ajustes posibles</h3>
+    <ul>
+      <li>Cambiar o agregar consultas temáticas.</li>
+      <li>Restringir a un conjunto fijo de revistas de alto impacto.</li>
+      <li>Ampliar la ventana de las consultas generales si una semana rinde poco.</li>
+      <li>Exportar cada edición a Word o guardarla en OneDrive además de esta página.</li>
+    </ul>
+
+    <div class="pendiente">
+      <b>Nota sobre esta edición.</b> Las cinco consultas se ejecutaron sin incidentes y PubMed no
+      devolvió errores por límite de peticiones. La primera consulta, <em>cancer screening inequality</em>,
+      rindió poco: solo seis registros en los siete días, de modo que la sección de cáncer se completó
+      con un trabajo proveniente de otra consulta. La quinta, a catorce días, devolvió once registros, de
+      los cuales tres ya habían aparecido en la edición 04 y quedaron descartados; aportó tres de las
+      dieciséis fichas y, sumada la vigilancia de arbovirus del Caribe publicada en la
+      <em>Revista Panamericana de Salud Pública</em>, cuatro de dieciséis artículos son de la región o
+      están centrados en ella. La cuarta consulta, <em>machine learning public health data</em>, volvió a
+      arrastrar trabajos ajenos a la salud pública —microscopía, acuicultura, perforación de pozos—:
+      de sus 79 registros solo tres pasaron el filtro. Conviene afinar sus términos.
+    </div>
+
+    <h3>Declaración de transparencia e intereses</h3>
+    <p>
+      <strong>Cómo se produce esta página.</strong> Cada edición la genera un asistente de inteligencia
+      artificial (Claude, de Anthropic) que ejecuta de forma automática un conjunto fijo de búsquedas en
+      PubMed, aplica criterios de selección definidos de antemano y redacta las fichas. Los criterios los
+      estableció un académico de salud pública y están descritos en esta misma página. El proceso corre
+      cada lunes y nadie revisa el resultado antes de que se publique.
+    </p>
+    <p>
+      <strong>Qué implica.</strong> Las fichas se redactan a partir del título y del fragmento de resumen
+      que muestra PubMed, no del texto completo de los artículos. Ningún contenido pasa por revisión por
+      pares ni por verificación humana artículo por artículo. Un sistema de inteligencia artificial puede
+      cometer errores de interpretación, de atribución o de énfasis. El enlace al registro original es la
+      única fuente de verdad: consúltalo antes de citar.
+    </p>
+    <p>
+      <strong>Qué no es.</strong> Este boletín no es una revisión sistemática, no constituye recomendación
+      clínica ni de salud pública y no reemplaza la lectura de las fuentes primarias.
+    </p>
+    <p>
+      <strong>Intereses.</strong> El boletín no recibe financiamiento, patrocinio ni contraprestación de
+      ningún tipo. No existe vínculo comercial ni de otra naturaleza con las revistas, los autores o las
+      instituciones cuyos artículos se seleccionan. La única fuente consultada es PubMed, de la Biblioteca
+      Nacional de Medicina de Estados Unidos, a través de su interfaz pública.
+    </p>
+  </section>
+
+  <p class="pie">Edición 05 · generada el 12 de octubre de 2026 · próxima edición: lunes 19 de octubre</p>
+
+</div>
+
+</body></html>
