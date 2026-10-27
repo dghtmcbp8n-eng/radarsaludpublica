@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Radar en Salud Pública · Edición 07</title>
+<meta name="description" content="Actualización semanal de evidencia en salud pública, epidemiología y metodología de la investigación, dirigida a la comunidad universitaria y al público general.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://radarsaludpublica.cl/ediciones/07">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Radar en Salud Pública">
+<meta property="og:title" content="Radar en Salud Pública · Edición 07">
+<meta property="og:description" content="Actualización semanal de evidencia en salud pública, epidemiología y metodología de la investigación, dirigida a la comunidad universitaria y al público general.">
+<meta property="og:url" content="https://radarsaludpublica.cl/ediciones/07">
+<meta property="og:locale" content="es_CL">
+<meta property="og:image" content="https://radarsaludpublica.cl/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Logo de Radar en Salud Pública">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+  .logo{margin:0 0 1.1rem;line-height:0}.logo svg{display:block;height:clamp(64px,9vw,88px);width:auto}
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .edicion span:nth-child(3){flex-basis:100%}
+
+  html{scroll-padding-top:1rem}
+  body{margin:0;padding:0}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    color-scheme:dark;
+    --paper:#0d1618;
+    --surface:#152124;
+    --ink:#e4ecec;
+    --muted:#93a7ac;
+    --rule:#26363a;
+    --rule-soft:#1c2a2d;
+    --accent:#5cbfb6;
+    --t-onco:#d98ba3;
+    --t-sist:#7db4dd;
+    --t-epi:#79bf97;
+    --t-met:#d3a45f;
+    --t-eco:#b79ae0;
+    --shadow:0 1px 2px rgba(0,0,0,.3);
+
+    --max:70ch;
+    --step--1:.8125rem;
+    --step-0:1rem;
+    --step-1:1.1875rem;
+    --step-2:1.5rem;
+    --step-3:2rem;
+    --step-4:2.75rem;
+  }
+
+  *{box-sizing:border-box}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:var(--step-0);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-wrap:break-word;
+  }
+  h1,h2,h3,.q,.meta{overflow-wrap:break-word}
+  img,table{max-width:100%}
+  .wrap{max-width:calc(var(--max) + 8rem);margin:0 auto;padding:3.5rem 1.5rem 5rem}
+  a{color:inherit}
+  h1,h2,h3{font-family:Spectral,Georgia,serif;text-wrap:balance;margin:0;font-weight:600;line-height:1.2}
+
+  /* ---------- cabecera ---------- */
+  .masthead{border-bottom:1px solid var(--ink);padding-bottom:1.25rem}
+  .kicker{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:var(--step--1);letter-spacing:.14em;text-transform:uppercase;
+    color:var(--accent);margin:0 0 .75rem
+  }
+  h1{font-size:var(--step-4);letter-spacing:-.015em}
+  .edicion{
+    display:flex;flex-wrap:wrap;gap:.35rem 1.25rem;align-items:baseline;
+    margin-top:.5rem;font-family:"IBM Plex Mono",monospace;
+    font-size:var(--step--1);color:var(--muted)
+  }
+  .standfirst{
+    font-family:Spectral,Georgia,serif;font-size:var(--step-1);
+    max-width:var(--max);margin:1.75rem 0 0;color:var(--ink)
+  }
+
+  /* ---------- panel de búsqueda ---------- */
+  .busqueda{
+    margin:2.5rem 0 0;padding:1.25rem 1.4rem;
+    background:var(--surface);border:1px solid var(--rule-soft);
+  }
+  .busqueda h2{
+    font-family:"IBM Plex Mono",monospace;font-weight:500;
+    font-size:var(--step--1);letter-spacing:.12em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:1rem
+  }
+  .consultas{list-style:none;margin:0;padding:0;display:grid;gap:.7rem}
+  .consultas li{
+    display:grid;grid-template-columns:1fr auto;gap:.35rem 1rem;align-items:baseline;
+    padding-bottom:.7rem;border-bottom:1px solid var(--rule-soft)
+  }
+  .consultas li:last-child{border-bottom:0;padding-bottom:0}
+  .q{font-family:"IBM Plex Mono",monospace;font-size:var(--step--1)}
+  .n{
+    font-family:"IBM Plex Mono",monospace;font-size:var(--step--1);
+    color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap
+  }
+  .totales{
+    margin:1.1rem 0 0;padding-top:.9rem;border-top:1px solid var(--rule);
+    font-size:var(--step--1);color:var(--muted)
+  }
+  .totales strong{color:var(--ink);font-variant-numeric:tabular-nums}
+
+  /* ---------- secciones ---------- */
+  .tema{margin-top:3.5rem}
+  .tema-cab{
+    display:flex;align-items:baseline;gap:.9rem;
+    padding-bottom:.6rem;border-bottom:2px solid var(--hue)
+  }
+  .tema-cab h2{font-size:var(--step-2);color:var(--hue)}
+  .tema-cab .cuenta{
+    margin-left:auto;font-family:"IBM Plex Mono",monospace;
+    font-size:var(--step--1);color:var(--muted);font-variant-numeric:tabular-nums
+  }
+  .tema[data-hue="onco"]{--hue:var(--t-onco)}
+  .tema[data-hue="sist"]{--hue:var(--t-sist)}
+  .tema[data-hue="epi"]{--hue:var(--t-epi)}
+  .tema[data-hue="met"]{--hue:var(--t-met)}
+
+  .fichas{display:grid;gap:0;margin-top:.5rem}
+  .ficha{
+    padding:1.5rem 0;border-bottom:1px solid var(--rule-soft);
+    max-width:var(--max)
+  }
+  .ficha:last-child{border-bottom:0}
+  .meta{
+    font-family:"IBM Plex Mono",monospace;font-size:var(--step--1);
+    color:var(--muted);display:flex;flex-wrap:wrap;gap:.3rem .6rem;margin-bottom:.4rem
+  }
+  .meta .revista{color:var(--hue);font-weight:500}
+  .meta .sep{opacity:.45}
+  .ficha h3{font-size:var(--step-1);line-height:1.3}
+  .ficha h3 a{text-decoration:none;background-image:linear-gradient(var(--rule),var(--rule));background-size:100% 1px;background-position:0 100%;background-repeat:no-repeat;padding-bottom:.08em}
+  .ficha h3 a:hover{background-image:linear-gradient(var(--hue),var(--hue))}
+  .ficha p{margin:.55rem 0 0;color:var(--ink)}
+  .porque{
+    margin-top:.6rem;padding-left:.85rem;border-left:2px solid var(--hue);
+    font-size:var(--step--1);color:var(--muted)
+  }
+  .porque b{
+    font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:.9em;
+    letter-spacing:.06em;text-transform:uppercase;color:var(--hue);
+    display:block;margin-bottom:.15rem
+  }
+
+  /* ---------- metodología ---------- */
+  .metodo{
+    margin-top:4.5rem;padding-top:2rem;border-top:1px solid var(--ink);
+    max-width:var(--max)
+  }
+  .metodo h2{font-size:var(--step-2);margin-bottom:1rem}
+  .metodo h3{
+    font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:var(--step--1);
+    letter-spacing:.12em;text-transform:uppercase;color:var(--accent);
+    margin:1.9rem 0 .5rem
+  }
+  .metodo p{margin:.6rem 0;color:var(--muted)}
+  .metodo ul{margin:.6rem 0;padding-left:1.1rem;color:var(--muted)}
+  .metodo li{margin:.35rem 0}
+  .metodo strong{color:var(--ink);font-weight:600}
+  .pendiente{
+    margin-top:1.5rem;padding:1rem 1.2rem;background:var(--surface);
+    border-left:2px solid var(--accent);font-size:var(--step--1);color:var(--muted)
+  }
+  .pendiente b{color:var(--ink)}
+
+  .pie{
+    margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--rule);
+    font-family:"IBM Plex Mono",monospace;font-size:var(--step--1);color:var(--muted)
+  }
+
+  a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+  @media (max-width:640px){
+    :root{--step-4:2.05rem;--step-3:1.7rem;--step-2:1.3rem;--step-1:1.125rem}
+    .wrap,.shell{padding:2.25rem 1rem 3.25rem}
+    .consultas li{grid-template-columns:1fr}
+    .busqueda{padding:1rem 1.1rem}
+    .tema{margin-top:2.5rem}
+    .ficha{padding:1.25rem 0}
+    .metodo{margin-top:3.25rem}
+    .tema-cab{flex-wrap:wrap;gap:.35rem .7rem}
+    .tema-cab .cuenta{margin-left:0;width:100%}
+  }
+  @media (max-width:420px){
+    :root{--step-4:1.8rem}
+    .wrap,.shell{padding:2rem .9rem 3rem}
+  }
+
+  .aviso{
+    margin:1.6rem 0 0;padding:.9rem 1.15rem;
+    background:var(--surface);border-left:2px solid var(--accent);
+    font-size:var(--step--1);line-height:1.55;color:var(--muted);
+    max-width:var(--max)
+  }
+
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+  /* ---------- edición 07: eco y destacados ---------- */
+  .tema[data-hue="eco"]{--hue:var(--t-eco)}
+  .esencial{
+    margin:1.9rem 0 0;padding:1.15rem 1.4rem;
+    background:var(--surface);border-left:2px solid var(--accent);
+    max-width:var(--max)
+  }
+  .esencial h2{
+    font-family:"IBM Plex Mono",monospace;font-weight:500;
+    font-size:var(--step--1);letter-spacing:.12em;text-transform:uppercase;
+    color:var(--accent);margin:0 0 .6rem
+  }
+  .esencial ul{margin:0;padding-left:1.15rem;display:grid;gap:.6rem}
+  .esencial li{
+    font-family:Spectral,Georgia,serif;font-size:var(--step-1);
+    line-height:1.45;color:var(--ink)
+  }
+  .esencial li::marker{color:var(--accent)}
+  .esencial strong{font-weight:600}
+  .esencial a{
+    text-decoration:none;
+    background-image:linear-gradient(var(--rule),var(--rule));
+    background-size:100% 1px;background-position:0 100%;background-repeat:no-repeat;
+    padding-bottom:.08em
+  }
+  .esencial a:hover{background-image:linear-gradient(var(--accent),var(--accent))}
+  .ficha[id]{scroll-margin-top:2rem}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <p style="max-width:70ch;margin:0 0 2.25rem;padding:.75rem 1rem;background:var(--surface);border-left:2px solid var(--accent);font-family:'IBM Plex Mono',monospace;font-size:.8125rem;color:var(--muted)">
+    Edición archivada. <a href="../index.html" style="color:var(--accent)">Volver a la edición actual del Radar en Salud Pública</a>
+  </p>
+
+  <header class="masthead">
+    <h1 class="logo"><span class="sr">Radar en Salud Pública — boletín semanal</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="22 14 338 92" aria-hidden="true" focusable="false"><g transform="translate(6,0)"><g fill="none" stroke="#e4ecec" stroke-width="2.6" stroke-linecap="round"><circle cx="60" cy="60" r="40"/><path d="M78.79 53.16A20 20 0 1 1 53.16 41.21"/><path d="M60 60L88.28 31.72" stroke="#5cbfb6"/></g><circle cx="60" cy="60" r="3" fill="#e4ecec"/><circle cx="96.77" cy="23.23" r="4.6" fill="#5cbfb6"/></g><g transform="translate(148,62)"><path d="M4.16 0.0V-1.024L9.28 -3.584V-38.656L4.16 -41.216V-42.24H20.672Q27.392 -42.24 31.264000000000003 -39.456Q35.136 -36.672000000000004 35.136 -31.808Q35.136 -28.224 32.704 -25.375999999999998Q30.272000000000002 -22.528 26.240000000000002 -21.056L38.4 -3.3280000000000003L42.624 -1.024V0.0H33.408L20.992 -19.392H15.040000000000001V-3.648L19.84 -1.024V0.0ZM19.2 -38.72H15.040000000000001V-22.912H19.584Q23.616 -22.912 26.272 -25.183999999999997Q28.928 -27.456 28.928 -30.976Q28.928 -34.56 26.336 -36.64Q23.744 -38.72 19.2 -38.72ZM52.288000000000004 0.64Q49.28 0.64 47.29600000000001 -1.1199999999999999Q45.312000000000005 -2.88 45.312000000000005 -6.016Q45.312000000000005 -9.152000000000001 47.648 -11.456Q49.984 -13.76 55.488 -15.040000000000001L61.568 -16.448V-21.12Q61.568 -23.36 59.936 -24.928Q58.304 -26.496000000000002 56.064 -26.496000000000002Q55.168000000000006 -26.496000000000002 54.272000000000006 -26.304000000000002Q53.376000000000005 -26.112000000000002 51.904 -25.408V-19.52H47.808Q46.784000000000006 -19.52 46.36800000000001 -20.0Q45.952000000000005 -20.48 45.952000000000005 -21.696Q45.952000000000005 -23.488 47.488 -25.28Q49.024 -27.072 51.68 -28.256Q54.336 -29.44 57.664 -29.44Q62.272000000000006 -29.44 64.48 -27.552Q66.688 -25.664 66.688 -22.464000000000002V-4.288Q67.136 -3.84 68.0 -3.52Q68.864 -3.2 70.272 -3.2H72.70400000000001L72.896 -3.072V-2.88Q72.128 -1.472 70.624 -0.416Q69.12 0.64 66.944 0.64Q64.96000000000001 0.64 63.712 -0.416Q62.464 -1.472 61.952 -3.2H61.568Q59.904 -1.6 57.44 -0.48000000000000004Q54.976 0.64 52.288000000000004 0.64ZM50.304 -7.296Q50.304 -3.3280000000000003 55.104 -3.3280000000000003Q56.64 -3.3280000000000003 58.144000000000005 -3.648Q59.648 -3.968 61.568 -4.8V-14.272Q56.448 -13.312000000000001 54.08 -12.256Q51.712 -11.200000000000001 51.008 -9.984000000000002Q50.304 -8.768 50.304 -7.296ZM87.55199999999999 0.64Q84.35199999999999 0.64 81.82399999999998 -0.96Q79.29599999999999 -2.56 77.856 -5.472Q76.416 -8.384 76.416 -12.416Q76.416 -17.856 78.52799999999999 -21.664Q80.64 -25.472 84.16 -27.456000000000003Q87.67999999999999 -29.44 91.84 -29.44Q93.63199999999999 -29.44 94.976 -29.28Q96.32 -29.12 97.40799999999999 -28.864V-40.704L93.24799999999999 -44.032000000000004V-44.480000000000004L102.14399999999999 -48.0H102.52799999999999V-2.88L107.072 -1.024V0.0H98.048L97.536 -3.2640000000000002H97.088Q94.65599999999999 -1.216 92.416 -0.288Q90.17599999999999 0.64 87.55199999999999 0.64ZM81.536 -13.888Q81.536 -8.64 84.352 -6.208Q87.16799999999999 -3.7760000000000002 91.072 -3.7760000000000002Q92.60799999999999 -3.7760000000000002 94.24 -4.256Q95.872 -4.736 97.40799999999999 -5.696V-23.616Q95.872 -24.96 94.368 -25.632Q92.86399999999999 -26.304000000000002 91.008 -26.304000000000002Q88.448 -26.304000000000002 86.304 -25.056Q84.16 -23.808 82.848 -21.088Q81.536 -18.368000000000002 81.536 -13.888ZM119.36 0.64Q116.352 0.64 114.368 -1.1199999999999999Q112.384 -2.88 112.384 -6.016Q112.384 -9.152000000000001 114.72 -11.456Q117.05600000000001 -13.76 122.56 -15.040000000000001L128.64000000000001 -16.448V-21.12Q128.64000000000001 -23.36 127.00800000000001 -24.928Q125.376 -26.496000000000002 123.13600000000001 -26.496000000000002Q122.24000000000001 -26.496000000000002 121.34400000000001 -26.304000000000002Q120.44800000000001 -26.112000000000002 118.976 -25.408V-19.52H114.88000000000001Q113.85600000000001 -19.52 113.44 -20.0Q113.024 -20.48 113.024 -21.696Q113.024 -23.488 114.56 -25.28Q116.096 -27.072 118.75200000000001 -28.256Q121.408 -29.44 124.736 -29.44Q129.344 -29.44 131.552 -27.552Q133.76 -25.664 133.76 -22.464000000000002V-4.288Q134.208 -3.84 135.072 -3.52Q135.936 -3.2 137.344 -3.2H139.776L139.96800000000002 -3.072V-2.88Q139.20000000000002 -1.472 137.69600000000003 -0.416Q136.192 0.64 134.01600000000002 0.64Q132.032 0.64 130.784 -0.416Q129.536 -1.472 129.024 -3.2H128.64000000000001Q126.976 -1.6 124.512 -0.48000000000000004Q122.048 0.64 119.36 0.64ZM117.376 -7.296Q117.376 -3.3280000000000003 122.176 -3.3280000000000003Q123.712 -3.3280000000000003 125.21600000000001 -3.648Q126.72 -3.968 128.64000000000001 -4.8V-14.272Q123.52000000000001 -13.312000000000001 121.15200000000002 -12.256Q118.784 -11.200000000000001 118.08000000000001 -9.984000000000002Q117.376 -8.768 117.376 -7.296ZM144.0 0.0V-1.024L148.032 -3.072V-22.144000000000002L144.192 -25.472V-25.92L152.128 -29.44H152.512L153.152 -23.552H153.344Q155.648 -26.624000000000002 157.664 -27.936Q159.68 -29.248 161.472 -29.248Q162.816 -29.248 163.712 -28.576Q164.608 -27.904 164.608 -26.560000000000002Q164.608 -26.176000000000002 164.416 -25.088L164.03199999999998 -22.72L157.184 -24.0Q154.88 -23.04 153.152 -20.544V-3.072L157.696 -1.024V0.0Z" fill="#e4ecec"/></g><g transform="translate(151,92)"><path d="M1.247 0.0V-10.121H7.583500000000001V-8.758000000000001H2.871V-5.814500000000001H7.4095V-4.4515H2.871V-1.363H7.583500000000001V0.0ZM15.495500000000002 -7.7865H15.365000000000002V0.0H13.944000000000003V-10.121H16.032000000000004L19.004500000000004 -2.3345000000000002H19.135V-10.121H20.556000000000004V0.0H18.468000000000004ZM42.963 0.17400000000000002Q41.6435 0.17400000000000002 40.7445 -0.29Q39.8455 -0.754 39.2655 -1.5225000000000002L40.3095 -2.523Q40.889500000000005 -1.8270000000000002 41.542 -1.50075Q42.194500000000005 -1.1745 43.021 -1.1745Q43.978 -1.1745 44.49275 -1.6095000000000002Q45.0075 -2.0445 45.0075 -2.8565Q45.0075 -3.5090000000000003 44.6305 -3.86425Q44.2535 -4.2195 43.34 -4.3790000000000004L42.238 -4.553Q41.513000000000005 -4.6690000000000005 41.02 -4.937250000000001Q40.527 -5.205500000000001 40.222500000000004 -5.5752500000000005Q39.918000000000006 -5.945 39.78025000000001 -6.40175Q39.642500000000005 -6.8585 39.642500000000005 -7.3660000000000005Q39.642500000000005 -8.8015 40.5705 -9.54825Q41.4985 -10.295 43.1225 -10.295Q44.326 -10.295 45.17425 -9.91075Q46.0225 -9.5265 46.5445 -8.8305L45.529500000000006 -7.8155Q45.109 -8.323 44.53625 -8.63475Q43.9635 -8.9465 43.1225 -8.9465Q42.2235 -8.9465 41.752250000000004 -8.56225Q41.281000000000006 -8.178 41.281000000000006 -7.4385Q41.281000000000006 -6.815 41.65075 -6.4597500000000005Q42.020500000000006 -6.104500000000001 42.963 -5.945L44.036 -5.7565Q45.399 -5.510000000000001 46.0225 -4.763250000000001Q46.646 -4.016500000000001 46.646 -2.9435000000000002Q46.646 -2.2475 46.40675 -1.6675Q46.167500000000004 -1.0875000000000001 45.696250000000006 -0.6815000000000001Q45.225 -0.2755 44.53625 -0.05075Q43.847500000000004 0.17400000000000002 42.963 0.17400000000000002ZM58.29900000000001 0.0 57.53050000000001 -2.697H54.31150000000001L53.543000000000006 0.0H51.89000000000001L54.848000000000006 -10.121H57.066500000000005L60.02450000000001 0.0ZM55.979000000000006 -8.4825H55.86300000000001L54.61600000000001 -4.0455000000000005H57.226000000000006ZM66.06600000000002 0.0V-10.121H67.69000000000001V-1.363H72.30100000000002V0.0ZM80.02450000000002 -10.121V-3.9005Q80.02450000000002 -3.277 80.06075000000001 -2.7695Q80.09700000000002 -2.262 80.27100000000002 -1.9067500000000002Q80.44500000000002 -1.5515 80.79300000000002 -1.363Q81.14100000000002 -1.1745 81.75000000000001 -1.1745Q82.35900000000002 -1.1745 82.70700000000002 -1.363Q83.05500000000002 -1.5515 83.22900000000001 -1.9067500000000002Q83.40300000000002 -2.262 83.43925000000002 -2.7695Q83.47550000000003 -3.277 83.47550000000003 -3.9005V-10.121H85.09950000000002V-4.1905Q85.09950000000002 -3.103 84.97625000000002 -2.2837500000000004Q84.85300000000002 -1.4645000000000001 84.49050000000003 -0.9207500000000001Q84.12800000000001 -0.377 83.46825000000001 -0.10149999999999999Q82.80850000000002 0.17400000000000002 81.75000000000001 0.17400000000000002Q80.69150000000002 0.17400000000000002 80.03175000000002 -0.10149999999999999Q79.37200000000001 -0.377 79.00950000000002 -0.9207500000000001Q78.64700000000002 -1.4645000000000001 78.52375000000002 -2.2837500000000004Q78.40050000000002 -3.103 78.40050000000002 -4.1905V-10.121ZM91.48900000000003 -10.121H94.50500000000002Q96.44800000000002 -10.121 97.38325000000003 -8.8305Q98.31850000000003 -7.54 98.31850000000003 -5.0605Q98.31850000000003 -2.581 97.38325000000003 -1.2905Q96.44800000000002 0.0 94.50500000000002 0.0H91.48900000000003ZM94.40350000000002 -1.334Q95.52000000000002 -1.334 96.06375000000003 -2.08075Q96.60750000000003 -2.8275 96.60750000000003 -4.2195V-5.9015Q96.60750000000003 -7.293500000000001 96.06375000000003 -8.04025Q95.52000000000002 -8.787 94.40350000000002 -8.787H93.09850000000003V-1.334ZM117.31800000000004 0.0V-10.121H121.10250000000003Q122.55250000000004 -10.121 123.31375000000003 -9.309000000000001Q124.07500000000003 -8.497 124.07500000000003 -7.0760000000000005Q124.07500000000003 -5.655 123.31375000000003 -4.843Q122.55250000000004 -4.031000000000001 121.10250000000003 -4.031000000000001H118.94200000000004V0.0ZM118.94200000000004 -5.3795H120.85600000000004Q122.36400000000003 -5.3795 122.36400000000003 -6.7715000000000005V-7.3950000000000005Q122.36400000000003 -8.7725 120.85600000000004 -8.7725H118.94200000000004ZM131.62450000000004 -10.121V-3.9005Q131.62450000000004 -3.277 131.66075000000004 -2.7695Q131.69700000000003 -2.262 131.87100000000004 -1.9067500000000002Q132.04500000000002 -1.5515 132.39300000000003 -1.363Q132.74100000000004 -1.1745 133.35000000000002 -1.1745Q133.95900000000003 -1.1745 134.30700000000002 -1.363Q134.65500000000003 -1.5515 134.82900000000004 -1.9067500000000002Q135.00300000000004 -2.262 135.03925000000004 -2.7695Q135.07550000000003 -3.277 135.07550000000003 -3.9005V-10.121H136.69950000000003V-4.1905Q136.69950000000003 -3.103 136.57625000000002 -2.2837500000000004Q136.45300000000003 -1.4645000000000001 136.09050000000002 -0.9207500000000001Q135.72800000000004 -0.377 135.06825000000003 -0.10149999999999999Q134.40850000000003 0.17400000000000002 133.35000000000002 0.17400000000000002Q132.29150000000004 0.17400000000000002 131.63175000000004 -0.10149999999999999Q130.97200000000004 -0.377 130.60950000000003 -0.9207500000000001Q130.24700000000004 -1.4645000000000001 130.12375000000003 -2.2837500000000004Q130.00050000000002 -3.103 130.00050000000002 -4.1905V-10.121ZM133.50950000000003 -10.8605 132.53800000000004 -11.3245 133.85750000000002 -13.9345 135.22050000000002 -13.2675ZM143.10350000000003 -10.121H146.59800000000004Q147.97550000000004 -10.121 148.73675000000003 -9.4105Q149.49800000000005 -8.700000000000001 149.49800000000005 -7.4675Q149.49800000000005 -6.583 149.06300000000005 -6.061Q148.62800000000004 -5.539000000000001 147.88850000000002 -5.3215V-5.2490000000000006Q148.77300000000002 -5.046 149.3095 -4.47325Q149.84600000000003 -3.9005 149.84600000000003 -2.8565Q149.84600000000003 -2.233 149.64300000000003 -1.711Q149.44000000000003 -1.189 149.06300000000005 -0.8047500000000001Q148.68600000000004 -0.42050000000000004 148.15675000000005 -0.21025000000000002Q147.62750000000003 0.0 146.98950000000002 0.0H143.10350000000003ZM146.49650000000003 -1.247Q147.30850000000004 -1.247 147.74350000000004 -1.5805000000000002Q148.17850000000004 -1.9140000000000001 148.17850000000004 -2.6535V-3.1755Q148.17850000000004 -3.915 147.74350000000004 -4.2485Q147.30850000000004 -4.582 146.49650000000003 -4.582H144.69850000000002V-1.247ZM146.26450000000003 -5.771Q147.03300000000004 -5.771 147.43175000000002 -6.06825Q147.83050000000003 -6.3655 147.83050000000003 -7.0615000000000006V-7.583500000000001Q147.83050000000003 -8.2795 147.43175000000002 -8.57675Q147.03300000000004 -8.874 146.26450000000003 -8.874H144.69850000000002V-5.771ZM156.36600000000004 0.0V-10.121H157.99000000000004V-1.363H162.60100000000003V0.0ZM168.86000000000004 0.0V-1.2325000000000002H171.23800000000006V-8.8885H168.86000000000004V-10.121H175.24000000000004V-8.8885H172.86200000000005V-1.2325000000000002H175.24000000000004V0.0ZM185.24000000000007 0.17400000000000002Q183.31150000000005 0.17400000000000002 182.37625000000006 -1.189Q181.44100000000006 -2.552 181.44100000000006 -5.0605Q181.44100000000006 -7.569 182.37625000000006 -8.932Q183.31150000000005 -10.295 185.24000000000007 -10.295Q185.97950000000006 -10.295 186.52325000000008 -10.099250000000001Q187.06700000000006 -9.903500000000001 187.45850000000007 -9.562750000000001Q187.85000000000005 -9.222000000000001 188.11825000000005 -8.765250000000002Q188.38650000000004 -8.3085 188.56050000000005 -7.7865L187.09600000000006 -7.293500000000001Q186.98000000000005 -7.641500000000001 186.83500000000004 -7.946000000000001Q186.69000000000005 -8.2505 186.47250000000005 -8.468Q186.25500000000005 -8.685500000000001 185.95775000000003 -8.816Q185.66050000000004 -8.9465 185.22550000000004 -8.9465Q184.15250000000006 -8.9465 183.65950000000004 -8.12725Q183.16650000000004 -7.308000000000001 183.16650000000004 -5.916V-4.205Q183.16650000000004 -2.813 183.65950000000004 -1.9937500000000001Q184.15250000000006 -1.1745 185.22550000000004 -1.1745Q185.66050000000004 -1.1745 185.95775000000003 -1.3050000000000002Q186.25500000000005 -1.4355 186.47250000000005 -1.653Q186.69000000000005 -1.8705 186.83500000000004 -2.1750000000000003Q186.98000000000005 -2.4795000000000003 187.09600000000006 -2.8275L188.56050000000005 -2.3345000000000002Q188.38650000000004 -1.8125 188.11825000000005 -1.35575Q187.85000000000005 -0.899 187.45850000000007 -0.55825Q187.06700000000006 -0.2175 186.52325000000008 -0.02174999999999999Q185.97950000000006 0.17400000000000002 185.24000000000007 0.17400000000000002ZM200.19900000000007 0.0 199.43050000000005 -2.697H196.21150000000006L195.44300000000007 0.0H193.79000000000005L196.74800000000005 -10.121H198.96650000000005L201.92450000000005 0.0ZM197.87900000000005 -8.4825H197.76300000000006L196.51600000000005 -4.0455000000000005H199.12600000000006Z" fill="#e4ecec" opacity=".85"/></g></svg></h1>
+    <p class="kicker">Boletín semanal</p>
+    <div class="edicion">
+      <span>Edición 07</span>
+      <span>19 – 25 de octubre de 2026</span>
+      <span>18 artículos seleccionados de 108 registros encontrados</span>
+    </div>
+  </header>
+
+  <section class="esencial" aria-labelledby="esencial-titulo">
+    <h2 id="esencial-titulo">Lo más destacado en esta edición</h2>
+    <ul>
+      <li><a href="#f-42609103"><strong>El tiempo de espera como variable de resultado</strong></a>: un programa brasileño de navegación de pacientes con cáncer de mama, evaluado por su efecto en los tiempos de espera y en los costos de tratamiento.</li>
+      <li><a href="#f-42905202"><strong>Menos carga registrada no es menos problema</strong></a>: en México, los estados más marginados muestran estimaciones de carga de cáncer de próstata más bajas en 2023, pero tendencias menos favorables, con datos de registro y diagnóstico limitados.</li>
+      <li><a href="#f-42924910"><strong>Diferencias en diferencias, aplicadas a una política de tabaco</strong></a>: cruza la normativa de cada estado con quince ciclos de una encuesta poblacional para estimar diferencias de riesgo de pérdida dentaria.</li>
+      <li><a href="#f-42899410"><strong>Qué cambia cuando el no asegurado se asegura</strong></a>: un estudio de modelación estima el efecto de ganar cobertura privada sobre los desenlaces de cáncer colorrectal.</li>
+      <li><a href="#f-42924376"><strong>Los datos del mundo real tienen trampas conocidas</strong></a>: repaso de los errores metodológicos frecuentes al generar evidencia con registros clínicos, datos de seguros y dispositivos.</li>
+    </ul>
+  </section>
+
+  <p class="aviso">
+    Página generada con inteligencia artificial y actualizada de forma automática cada lunes,
+    según criterios preestablecidos. Las fichas se redactan a partir de la información que entrega
+    PubMed, no del texto completo de los artículos. Revisa siempre la fuente original antes de citar.
+  </p>
+
+  <section class="busqueda">
+    <h2>Consultas ejecutadas en PubMed</h2>
+    <ul class="consultas">
+      <li>
+        <span class="q">cancer screening inequality</span>
+        <span class="n">6 registros</span>
+      </li>
+      <li>
+        <span class="q">health system access equity</span>
+        <span class="n">33 registros</span>
+      </li>
+      <li>
+        <span class="q">epidemiology surveillance population trends</span>
+        <span class="n">41 registros</span>
+      </li>
+      <li>
+        <span class="q">causal inference health policy</span>
+        <span class="n">10 registros</span>
+      </li>
+      <li>
+        <span class="q">latin america health inequality</span>
+        <span class="n">0 registros</span>
+      </li>
+      <li>
+        <span class="q">cost effectiveness health policy</span>
+        <span class="n">18 registros</span>
+      </li>
+      <li>
+        <span class="q">revista Cochrane Evid Synth Methods</span>
+        <span class="n">sin acceso</span>
+      </li>
+    </ul>
+    <p class="totales">
+      Tres consultas usan filtro de fecha de publicación <strong>2026/10/19 – 2026/10/25</strong>
+      (siete días): <em>health system access equity</em>,
+      <em>epidemiology surveillance population trends</em> y
+      <em>cost effectiveness health policy</em>. Las otras cuatro
+      —<em>cancer screening inequality</em>, <em>causal inference health policy</em>,
+      <em>latin america health inequality</em> y la revista <em>Cochrane Evid Synth Methods</em>—
+      usan una ventana de catorce días, <strong>2026/10/12 – 2026/10/25</strong>, porque esa
+      literatura entra a PubMed con menos volumen o con retraso. Orden por fecha descendente en
+      todas. Se leyeron hasta los <strong>50</strong> registros más recientes de cada consulta, o
+      todos cuando devolvió menos, y se seleccionaron <strong>18</strong>. La consulta de la revista
+      <em>Cochrane Evid Synth Methods</em> quedó <strong>sin acceso</strong> y no se suma al total de
+      registros encontrados.
+    </p>
+  </section>
+
+  <!-- ============ CÁNCER Y POLÍTICAS ============ -->
+  <section class="tema" id="sec-onco" data-hue="onco">
+    <div class="tema-cab">
+      <h2>Cáncer y políticas de salud</h2>
+      <span class="cuenta">4 artículos</span>
+    </div>
+    <div class="fichas">
+
+      <article class="ficha" id="f-42905202">
+        <p class="meta"><span class="revista">Cancer Causes &amp; Control</span><span class="sep">·</span><span>21 oct 2026</span><span class="sep">·</span><span>Guzmán-Esquivel J et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42905202/">Subnational inequalities and socioeconomic gradients in prostate cancer burden across Mexico, 2000-2023</a></h3>
+        <p>Analiza la carga de cáncer de próstata en México entre 2000 y 2023 a escala subnacional, con el gradiente socioeconómico entre estados. Según el fragmento de PubMed, los estados más marginados registran estimaciones de carga más bajas en 2023, pero tendencias menos favorables; los autores advierten que los datos de registro y de diagnóstico son limitados.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Es el caso latinoamericano más parecido al tuyo: una desigualdad territorial donde la cifra baja puede significar menos detección y no menos enfermedad. El mismo cuidado hace falta al leer los registros regionales chilenos.</p>
+      </article>
+
+      <article class="ficha" id="f-42899410">
+        <p class="meta"><span class="revista">Journal of the National Cancer Institute</span><span class="sep">·</span><span>20 oct 2026</span><span class="sep">·</span><span>van den Puttelaar R et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42899410/">Effects of private health insurance coverage gains on colorectal cancer outcomes: a modeling study</a></h3>
+        <p>Estudio de modelación que estima el efecto de ganar cobertura de seguro privado, en personas antes sin seguro, sobre los desenlaces de cáncer colorrectal. El punto de partida declarado es que la falta de seguro limita el acceso a la atención y abre inequidades potencialmente evitables.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Traduce una decisión de aseguramiento a desenlaces de cáncer, que es la pregunta de fondo en la discusión Fonasa–isapres. El diseño de modelación sirve justamente cuando no hay experimento disponible y hay que proyectar el efecto de un cambio de cobertura.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">International Journal of Women's Health</span><span class="sep">·</span><span>12 oct 2026</span><span class="sep">·</span><span>Inturrisi F et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42898094/">Scaling HPV Self-Sampling in Low-Resource Settings: From Evidence to Sustainable Implementation</a></h3>
+        <p>Revisa el paso de la evidencia a la implementación sostenible de la automuestra para virus del papiloma humano en contextos de pocos recursos. Los autores consignan inequidades globales profundas en la carga de cáncer cervicouterino, con cerca del 90 % de las muertes en países de ingreso bajo y mediano, y recuerdan que la prueba de VPH de alto desempeño es el método de tamizaje primario recomendado.</p>
+        <p class="porque"><b>Por qué mirarlo</b>La automuestra es la vía más concreta para alcanzar a las mujeres que no acuden al tamizaje, y el cuello de botella ya no es la evidencia sino cómo sostener el programa. Directamente aplicable a la cobertura de tamizaje en comunas rurales del sur.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">Journal of Intellectual Disability Research</span><span class="sep">·</span><span>21 oct 2026</span><span class="sep">·</span><span>Harmsen R et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42908096/">Cancer Diagnostics Among People With Intellectual Disability—A Systematic Review</a></h3>
+        <p>Revisión sistemática del conocimiento disponible sobre el diagnóstico de cáncer en personas con discapacidad intelectual. El fragmento de PubMed consigna que esta población tiene una esperanza de vida bastante menor que la general y que el cáncer es una de sus causas de muerte más frecuentes.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Es un grupo que suele quedar fuera de los análisis de equidad simplemente porque no está identificado en los registros. Vale tenerlo a la vista cuando se discute a quién cubre de verdad una garantía.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ SISTEMAS Y SERVICIOS ============ -->
+  <section class="tema" id="sec-sist" data-hue="sist">
+    <div class="tema-cab">
+      <h2>Sistemas y servicios de salud</h2>
+      <span class="cuenta">4 artículos</span>
+    </div>
+    <div class="fichas">
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">JMIR Medical Informatics</span><span class="sep">·</span><span>23 oct 2026</span><span class="sep">·</span><span>Liu L et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42913396/">Patient-Provider Distance in Medicare Outpatient Oncology Telehealth Versus Office Visits, 2021-2023: Cross-Sectional Analysis</a></h3>
+        <p>Compara la distancia entre paciente y prestador en atenciones oncológicas ambulatorias de Medicare, según si fueron por telesalud o presenciales, entre 2021 y 2023. Los autores plantean que una política equitativa de telesalud debería apuntar a quienes cargan con más viaje y a las brechas de acceso digital.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Mide la distancia recorrida, que es la variable que mejor captura el costo territorial de atenderse en oncología. Es el indicador que conviene construir con los datos chilenos antes de discutir si la telesalud compensa la centralización de la atención oncológica.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">Health Policy and Planning</span><span class="sep">·</span><span>19 oct 2026</span><span class="sep">·</span><span>Katyoka E et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42574662/">Maternal health infrastructure investments in Zambia: leveraging geospatial evidence to inform planning and prioritization</a></h3>
+        <p>Usa evidencia geoespacial para orientar las decisiones de inversión en infraestructura de salud materna en Zambia. El fragmento vincula las brechas espaciales de acceso con las inequidades en salud materna de los países de ingreso bajo y mediano.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Es el ejercicio que falta en Chile: pasar del mapa de brechas a una regla de priorización de inversiones. Mismo problema que la red oncológica del sur, donde la pregunta es dónde conviene instalar la siguiente capacidad.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">BMC Health Services Research</span><span class="sep">·</span><span>22 oct 2026</span><span class="sep">·</span><span>Cwik JC et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42920109/">Patient-centered access to mental health care at selected life-course stages: a scoping review using the Levesque framework</a></h3>
+        <p>Revisión exploratoria del acceso a la atención de salud mental en distintas etapas del curso de vida, ordenada con el marco de Levesque, que descompone el acceso en etapas sucesivas y en las capacidades que el paciente necesita en cada una.</p>
+        <p class="porque"><b>Por qué mirarlo</b>El marco de Levesque es la herramienta conceptual estándar para tu sublínea de acceso y oportunidad, y aquí la ves aplicada de principio a fin. Sirve de plantilla para ordenar el recorrido del paciente oncológico por etapa, no solo por tiempo de espera.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">Global Health Action</span><span class="sep">·</span><span>23 oct 2026</span><span class="sep">·</span><span>Saeedzai SA et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42922371/">Quantifying interprovincial health and poverty disparities in Afghanistan: a secondary analysis of national survey and administrative data</a></h3>
+        <p>Análisis secundario que cuantifica las disparidades de salud y pobreza entre provincias de Afganistán, con datos de una encuesta nacional de indicadores múltiples y datos geográficos de acceso a la atención.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Es un ejemplo limpio de cómo combinar encuesta nacional, datos administrativos y acceso geográfico para comparar unidades territoriales. La estructura del análisis se traslada casi sin cambios a una comparación entre regiones o servicios de salud chilenos.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ ECONOMÍA DE LA SALUD ============ -->
+  <section class="tema" id="sec-eco" data-hue="eco">
+    <div class="tema-cab">
+      <h2>Economía de la salud</h2>
+      <span class="cuenta">4 artículos</span>
+    </div>
+    <div class="fichas">
+
+      <article class="ficha" id="f-42609103">
+        <p class="meta"><span class="revista">Health Policy and Planning</span><span class="sep">·</span><span>19 oct 2026</span><span class="sep">·</span><span>Silva ARD et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42609103/">The Brazilian breast cancer patient navigation program: impact on waiting times and treatment costs</a></h3>
+        <p>Evalúa el programa brasileño de navegación de pacientes con cáncer de mama por su efecto en los tiempos de espera y en los costos de tratamiento. El fragmento de PubMed parte del problema de fondo: los retrasos en el diagnóstico y el tratamiento del cáncer afectan la eficiencia y la equidad del sistema.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Es la ficha más cercana a tu propuesta: una intervención de gestión del recorrido del paciente, evaluada con el tiempo de espera como desenlace y con los costos en la misma ecuación. Además es Brasil, de modo que el contexto de sistema público es comparable al chileno.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">European Journal of Health Economics</span><span class="sep">·</span><span>24 oct 2026</span><span class="sep">·</span><span>Dixon P et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42925359/">Modelling the potential contributions of polygenic risk stratification to cost-effective screening for prostate cancer</a></h3>
+        <p>Modela qué aportaría la estratificación por riesgo poligénico —un puntaje construido a partir de muchas variantes genéticas— a un tamizaje costo-efectivo de cáncer de próstata. El fragmento describe el uso de esos puntajes para afinar el riesgo individual y guiar la detección precoz.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Es el debate que viene en tamizaje: dejar de ofrecer lo mismo a todos y segmentar por riesgo. Vale entender cómo se evalúa económicamente esa idea antes de que llegue a la discusión chilena, donde el tamizaje de próstata sigue sin política clara.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">Health Systems &amp; Reform</span><span class="sep">·</span><span>22 oct 2026</span><span class="sep">·</span><span>Havela M et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42911658/">A Policy for the Delivery of Essential Medicines to Vulnerable Population in Argentina: A Case Study of the REMEDIAR Program</a></h3>
+        <p>Estudio de caso de la política argentina de entrega de medicamentos esenciales a población vulnerable. Según el fragmento, analiza los dos modelos de financiamiento que tuvo el programa REMEDIAR entre 2002 y 2024.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Veintidós años de un mismo programa con dos arquitecturas de financiamiento distintas es material escaso y muy útil: permite ver qué cambia cuando se cambia quién paga. Referencia latinoamericana directa para discutir la cobertura de fármacos en Chile.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">European Journal of Health Economics</span><span class="sep">·</span><span>23 oct 2026</span><span class="sep">·</span><span>Loetscher F et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42909537/">The effect of higher out-of-pocket payments on drug prices and demand</a></h3>
+        <p>Examina qué ocurre con los precios de los medicamentos y con la demanda cuando sube el gasto de bolsillo del paciente. El punto de partida declarado es que, si el paciente no asume el costo completo, tiene poco incentivo para buscar alternativas más baratas.</p>
+        <p class="porque"><b>Por qué mirarlo</b>El copago es el instrumento que el sistema chileno usa con más frecuencia y con menos evidencia sobre su efecto en los precios. Útil para no quedarse solo en el argumento de equidad cuando se discute subir o bajar el gasto de bolsillo.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ EPIDEMIOLOGÍA Y VIGILANCIA ============ -->
+  <section class="tema" id="sec-epi" data-hue="epi">
+    <div class="tema-cab">
+      <h2>Epidemiología y vigilancia</h2>
+      <span class="cuenta">3 artículos</span>
+    </div>
+    <div class="fichas">
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">Nature Medicine</span><span class="sep">·</span><span>21 oct 2026</span><span class="sep">·</span><span>GBD 2023 Pertussis Collaborators</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42907527/">Global, regional and national burden of pertussis in 1990-2023: a Global Burden of Disease study</a></h3>
+        <p>Estimación de la carga de tos convulsiva entre 1990 y 2023 por país y región, dentro del estudio de carga global de enfermedad. El fragmento consigna que la carga es inequitativa y se relaciona de forma inversa con el índice sociodemográfico, y que cerca del 65 % de las muertes se concentra en África subsahariana.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Es un ejemplo nítido de carga ordenada por un gradiente de desarrollo, el mismo razonamiento que aplicas a escala regional. Además es una enfermedad prevenible por vacunación, donde la brecha mide directamente el desempeño del programa.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">Journal of the National Cancer Institute</span><span class="sep">·</span><span>19 oct 2026</span><span class="sep">·</span><span>Waterboer T et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42895305/">Time trends of human papillomavirus-attributable head and neck cancers: the BROADEN study</a></h3>
+        <p>Estudio sobre la fracción de cánceres de cabeza y cuello atribuible al virus del papiloma humano y su tendencia temporal, en cinco localizaciones y siete países. Los autores lo presentan como el estudio más grande sobre causalidad del VPH en estos tumores, y reportan una atribución baja en el resto de los cánceres de cabeza y cuello.</p>
+        <p class="porque"><b>Por qué mirarlo</b>La fracción atribuible es el número que justifica extender la vacunación contra el VPH más allá del cáncer cervicouterino. Dato concreto para la discusión sobre el esquema chileno y sobre a quiénes conviene vacunar.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">Revista Brasileira de Enfermagem</span><span class="sep">·</span><span>19 oct 2026</span><span class="sep">·</span><span>Parada-Toro I et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42912110/">COVID-19 detection test use in the Mexican population, 2020–2022</a></h3>
+        <p>Estudio ecológico del uso de pruebas de detección de COVID-19 en la población mexicana entre 2020 y 2022, construido sobre cerca de quince millones de pruebas registradas en el sistema nacional de vigilancia.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Muestra cómo se explota un registro nacional de vigilancia a escala de millones de registros, que es el tipo de dato con el que trabajarás. El acceso a la prueba diagnóstica, más que el resultado, es la variable que revela desigualdad territorial.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ MÉTODOS Y CIENCIA DE DATOS ============ -->
+  <section class="tema" id="sec-met" data-hue="met">
+    <div class="tema-cab">
+      <h2>Métodos y ciencia de datos</h2>
+      <span class="cuenta">3 artículos</span>
+    </div>
+    <div class="fichas">
+
+      <article class="ficha" id="f-42924910">
+        <p class="meta"><span class="revista">Journal of Dental Research</span><span class="sep">·</span><span>23 oct 2026</span><span class="sep">·</span><span>Baumeister SE et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42924910/">Tobacco Control Policies and Tooth Loss: A Difference-in-Differences Study</a></h3>
+        <p>Estudio de diferencias en diferencias que cruza la normativa de control del tabaco de cada estado con quince ciclos de una encuesta poblacional de factores de riesgo, entre 1995 y 2012, para estimar diferencias y razones de riesgo de pérdida dentaria.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Es tu diseño aplicado a una política que entra en distintos momentos según el territorio, que es exactamente la estructura de la derivación automática al vencer la garantía GES. Conviene revisar cómo manejan la adopción escalonada y los supuestos de tendencia paralela.</p>
+      </article>
+
+      <article class="ficha" id="f-42924376">
+        <p class="meta"><span class="revista">Learning Health Systems</span><span class="sep">·</span><span>22 oct 2026</span><span class="sep">·</span><span>Gillen DL et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42924376/">Strengthening Real-World Evidence: Recognizing and Overcoming Methodological Pitfalls in Observational Health Data</a></h3>
+        <p>Repaso de los problemas metodológicos frecuentes al generar evidencia a partir de datos del mundo real. El fragmento enumera las fuentes consideradas: registros clínicos electrónicos, bases de seguros, registros poblacionales y dispositivos portátiles.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Es la lista de verificación que conviene tener al lado cuando se trabaja con datos administrativos, que es de donde saldrá tu evaluación de impacto. Los sesgos que describe aparecen antes de cualquier modelo, en la definición de la cohorte y del seguimiento.</p>
+      </article>
+
+      <article class="ficha">
+        <p class="meta"><span class="revista">BJGP Open</span><span class="sep">·</span><span>21 oct 2026</span><span class="sep">·</span><span>Boukari Y et al.</span></p>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/41748298/">Exploring the coding of migration status in English primary care from 2011-2025 using OpenCodeCounts: a descriptive study</a></h3>
+        <p>Estudio descriptivo sobre cómo se codifica la condición migratoria en la atención primaria inglesa entre 2011 y 2025. Compara el uso de los códigos relacionados con migración —más de treinta y cuatro millones de usos— con las cifras del ministerio del interior y con las tendencias del censo de 2021.</p>
+        <p class="porque"><b>Por qué mirarlo</b>Pregunta por la calidad del dato antes de usarlo: si una variable está mal codificada, ninguna técnica posterior lo arregla. Ejercicio replicable con los registros chilenos, donde la variable migratoria y la de pueblo originario tienen el mismo problema.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ METODOLOGÍA ============ -->
+  <section class="metodo" id="sec-metodo">
+    <h2>Cómo se arma este boletín</h2>
+    <p>
+      Cada lunes se ejecutan sobre PubMed las siete consultas de la tabla superior. Tres llevan
+      filtro de fecha de publicación acotado a los siete días previos y cuatro a los catorce, entre
+      ellas una acotada a la revista <em>Cochrane Evidence Synthesis and Methods</em>, porque esa
+      literatura entra a PubMed con menos volumen o con retraso. En todas el orden es descendente por
+      fecha. Se leen hasta los 50 registros más recientes de cada consulta, se descartan los que no
+      son investigación en salud pública y los que ya aparecieron en las dos ediciones anteriores, y
+      se redactan las fichas de los seleccionados.
+      Esta misma página se actualiza con la nueva edición y conserva el enlace.
+    </p>
+
+    <h3>Fuentes</h3>
+    <ul>
+      <li><strong>PubMed</strong> es la fuente principal. Cubre las revistas indexadas en inglés y también las hispanas indexadas en MEDLINE: <em>Gaceta Sanitaria</em>, <em>Revista Española de Salud Pública</em>, <em>Salud Pública de México</em>, <em>Revista Panamericana de Salud Pública</em>, <em>Revista Médica de Chile</em>.</li>
+      <li><strong>LILACS/BVS y SciELO</strong> se evaluaron y quedaron descartados porque bloquean el acceso automatizado, de modo que no pueden incorporarse como segunda fuente. La cobertura latinoamericana se hace con la consulta <em>latin america health inequality</em> de PubMed, a catorce días.</li>
+      <li>Los enlaces apuntan al registro en PubMed. Cuando se dispone del identificador PMID el enlace es directo; en el resto de los casos es una búsqueda por título exacto.</li>
+    </ul>
+
+    <h3>Criterios de selección</h3>
+    <ul>
+      <li>Artículos originales, revisiones sistemáticas y documentos de consenso. Se excluyen cartas, editoriales y correcciones.</li>
+      <li>Se privilegian los estudios con datos poblacionales o administrativos por sobre las series clínicas.</li>
+      <li>Se prioriza lo publicado en América Latina y España cuando la calidad es comparable.</li>
+      <li>La línea <em>Por qué mirarlo</em> es un comentario de relevancia, no un hallazgo del artículo.</li>
+    </ul>
+
+<div class="pendiente">
+      <b>Nota sobre esta edición.</b> Seis de las siete consultas corrieron con normalidad. La séptima,
+      acotada a la revista <em>Cochrane Evidence Synthesis and Methods</em>, no se pudo ejecutar: PubMed
+      respondió con una verificación de navegador tras varios reintentos espaciados, de modo que queda
+      <em>sin acceso</em> y no se suma al total de registros encontrados. La edición anterior sí la había
+      ejecutado bien con el filtro de fechas, así que el problema parece de límite de peticiones y no de
+      la consulta misma. La consulta <em>latin america health inequality</em> devolvió cero registros por
+      segunda semana consecutiva —la anterior trajo uno, ya publicado—, de modo que ese término está
+      rindiendo poco y conviene reemplazarlo. Con todo, esta edición trae cuatro artículos de América
+      Latina: México, Brasil, Argentina y de nuevo México, que entraron por las consultas de cáncer, de
+      acceso y de costo-efectividad. La sección <em>Economía de la salud</em>, estrenada la semana pasada,
+      viene con cuatro fichas, entre ellas la más pertinente de la edición. Dos títulos de la consulta de
+      acceso tuvieron que recuperarse en una segunda pasada porque la primera lectura los devolvió
+      abreviados; se verificaron antes de publicarlos.
+    </div>
+
+    <h3>Declaración de transparencia e intereses</h3>
+    <p>
+      <strong>Cómo se produce esta página.</strong> Cada edición la genera un asistente de inteligencia
+      artificial (Claude, de Anthropic) que ejecuta de forma automática un conjunto fijo de búsquedas en
+      PubMed, aplica criterios de selección definidos de antemano y redacta las fichas. Los criterios los
+      estableció un académico de salud pública y están descritos en esta misma página. El proceso corre
+      cada lunes y nadie revisa el resultado antes de que se publique.
+    </p>
+    <p>
+      <strong>Qué implica.</strong> Las fichas se redactan a partir del título y del fragmento de resumen
+      que muestra PubMed, no del texto completo de los artículos. Ningún contenido pasa por revisión por
+      pares ni por verificación humana artículo por artículo. Un sistema de inteligencia artificial puede
+      cometer errores de interpretación, de atribución o de énfasis. El enlace al registro original es la
+      única fuente de verdad: consúltalo antes de citar.
+    </p>
+    <p>
+      <strong>Qué no es.</strong> Este boletín no es una revisión sistemática, no constituye recomendación
+      clínica ni de salud pública y no reemplaza la lectura de las fuentes primarias.
+    </p>
+    <p>
+      <strong>Intereses.</strong> El boletín no recibe financiamiento, patrocinio ni contraprestación de
+      ningún tipo. No existe vínculo comercial ni de otra naturaleza con las revistas, los autores o las
+      instituciones cuyos artículos se seleccionan. La única fuente consultada es PubMed, de la Biblioteca
+      Nacional de Medicina de Estados Unidos, a través de su interfaz pública.
+    </p>
+  </section>
+
+  <p class="pie">Edición 07 · generada el 26 de octubre de 2026 · próxima edición: lunes 2 de noviembre</p>
+
+</div>
+
+</body></html>
